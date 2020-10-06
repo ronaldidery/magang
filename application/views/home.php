@@ -5,7 +5,7 @@
 
 
   <!-- site metas -->
-  <title>MTs Bima Bhakti Pertiwi</title>
+  <title>MTs Bima Bhakti</title>
 
   <!-- site icons -->
   <link rel="icon" href="<?= base_url('assets/templat') ?>/images/fevicon/fevicon.png" type="image/png" />
