@@ -34,7 +34,7 @@
         <div class="main_menu float-right">
          <div class="menu">
           <ul class="clearfix">
-           <li class="active"><a href="#">Home</a></li>
+           <li class="active"><a href="<?php echo site_url("home"); ?>">Home</a></li>
            <li><a href="<?php echo site_url("profil"); ?>">Profile</a></li>
            <li><a href="service.html">Service</a></li>
            <li><a href="screenshots.html">Screenshots</a></li>
@@ -297,6 +297,7 @@
 <script src="<?= base_url('assets/templat') ?>/js/jquery.min.js"></script>
 <script src="<?= base_url('assets/templat') ?>/js/popper.min.js"></script>
 <script src="<?= base_url('assets/templat') ?>/js/bootstrap.min.js"></script>
+<script src="<?= base_url('assets/templat');?>assets/bootstrap/js/bootstrap.js"></script>
 <!-- wow animation -->
 <script src="<?= base_url('assets/templat') ?>/js/wow.js"></script>
 <!-- custom js -->
