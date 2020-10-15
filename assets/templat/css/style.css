@@ -188,7 +188,7 @@ button.btn:hover,
 a.btn:focus,
 button.btn:focus {
     background: #252525;
-    color: #fff;
+    color: #28AD00;
 }
 
 button {
@@ -996,7 +996,7 @@ div.left_head ul li i {
 .menu > ul > li:hover > a,
 .menu > ul > li:focus > a,
 .menu > ul > li.active > a {
-    color: #FFFFFF;
+    color: #28AD00;
 }
 
 .menu > ul > li > ul {
@@ -2100,4 +2100,45 @@ box-shadow: 1px 1px 20px  #000;
     font-weight: 10px;
     padding: auto; 
 
+}
+
+nav ul ul li a{
+  line-height: 50px;
+}
+nav ul ul li a:hover{
+  box-shadow: none;
+}
+nav ul ul li{
+  position: relative;
+  margin: 0px;
+  width: 150px;
+  float: none;
+  display: list-item;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+nav ul ul li{
+    border-bottom: 0px;
+}
+nav ul ul{
+  position: absolute;
+  top: 90px;
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: top .3s;
+}
+nav ul ul{
+    top: 70px;
+    border-top: 0px;
+    float: none;
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+}
+nav ul li a:hover{
+  color: cyan;
+  border-radius: 5px;
+  box-shadow:  0 0 3px #33ffff,
+               0 0 8px #66ffff;
 }

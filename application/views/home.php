@@ -1,54 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- basic -->
-
-
-  <!-- site metas -->
-  <title>MTs Bima Bhakti</title>
-
-  <!-- site icons -->
-  <link rel="icon" href="<?= base_url('assets/templat') ?>/images/fevicon/fevicon.png" type="image/png" />
-  <!-- bootstrap css -->
-  <link rel="stylesheet" href="<?= base_url('assets/templat') ?>/css/bootstrap.min.css" />
-  <!-- site css -->
-  <link rel="stylesheet" href="<?= base_url('assets/templat') ?>/css/style.css" />
-  <!-- responsive css -->
-  <link rel="stylesheet" href="<?= base_url('assets/templat') ?>/css/responsive.css" />
-  <!-- colors css -->
-  <link rel="stylesheet" href="<?= base_url('assets/templat') ?>/css/colors.css" />
-  <!-- wow animation css -->
-  <link rel="stylesheet" href="<?= base_url('assets/templat') ?>/css/animate.css" />
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body id="default_theme" class="home_page1">
-    <!-- header -->
-    <header class="header header_style1">
-     <div class="container">
-      <div class="row">
-       <div class="col-md-9 col-lg-12">
-        <div class="logo"><a href="index.html"><img src="<?= base_url('assets/templat') ?>/images/LOGO_MTs.png" alt="#" /></a></div>
-        <div class="main_menu float-right">
-         <div class="menu">
-          <ul class="clearfix">
-           <li class="active"><a href="<?php echo site_url("home"); ?>">Home</a></li>
-           <li><a href="<?php echo site_url("profil"); ?>">Profile</a></li>
-           <li><a href="service.html">Service</a></li>
-           <li><a href="screenshots.html">Screenshots</a></li>
-           <li><a href="pricing.html">Pricing</a></li>
-           <li><a href="team.html">Team</a></li>
-           <li><a href="contact.html">Contact</a></li>
-         </ul>
-       </div>
-     </div>
-   </div>
- </div>
-</div>
-</header>
-
 <section >
  <div id="carouselExampleIndicators" class="carousel slide mt-3 ml-3 mr-3" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -88,66 +37,66 @@
 </div>
 
 <div id="page-wrap">
-<!-- end header -->
-<div class="side-footer-line"></div>
-<!-- Kolom Pendaftaran -->      
-<div class="container-fluid">
-  <div class="container">
+  <!-- end header -->
+  <div class="side-footer-line"></div>
+  <!-- Kolom Pendaftaran -->      
+  <div class="container-fluid">
+    <div class="container">
       <h4>INFORMASI PPDB MTS BIMA BHAKTI PERTIWI</h4>
       <a href="<?php  echo site_url ('ppdb'); ?>" class="white_bt bt_main">Info PPDB</a>
+    </div>
   </div>
-</div>
-<!-- Akhir Kolom Pendaftaran -->
-<div class="side-footer-line"></div>
-<!-- section -->
+  <!-- Akhir Kolom Pendaftaran -->
+  <div class="side-footer-line"></div>
+  <!-- section -->
 
-<section class="layout_padding">
-  <center>
-    <h2>INFORMASI</h2>
-  </center>
-  <div class="row row_row">
-    <div class="col-sm-6">
-      <div class="card border-success">
-        <div class="card-body">
-          <img class="d-block w-100" src="<?= base_url('assets/templat') ?>/images/LOGO_MTs.png">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="bt_main btn-dark">Go somewhere</a>
+  <section class="layout_padding">
+    <center>
+      <h2>INFORMASI</h2>
+    </center>
+    <div class="row row_row">
+      <div class="col-sm-6">
+        <div class="card border-success">
+          <div class="card-body">
+            <img class="d-block w-100" src="<?= base_url('assets/templat') ?>/images/LOGO_MTs.png">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="bt_main btn-dark">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card border-success">
+          <div class="card-body">
+            <img class="d-block w-100" src="<?= base_url('assets/templat') ?>/images/LOGO_MTs.png">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-dark">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card border-success">
+          <div class="card-body">
+            <img class="d-block w-100" src="<?= base_url('assets/templat') ?>/images/LOGO_MTs.png">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-dark">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card border-success">
+          <div class="card-body">
+            <img class="d-block w-100" src="<?= base_url('assets/templat') ?>/images/LOGO_MTs.png">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-dark">Go somewhere</a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-sm-6">
-      <div class="card border-success">
-        <div class="card-body">
-          <img class="d-block w-100" src="<?= base_url('assets/templat') ?>/images/LOGO_MTs.png">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-dark">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="card border-success">
-        <div class="card-body">
-          <img class="d-block w-100" src="<?= base_url('assets/templat') ?>/images/LOGO_MTs.png">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-dark">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="card border-success">
-        <div class="card-body">
-          <img class="d-block w-100" src="<?= base_url('assets/templat') ?>/images/LOGO_MTs.png">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-dark">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 </div>
 
 <!-- end section -->
@@ -215,23 +164,23 @@
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 margin_bottom_30">
      <h3>Google Maps</h3>
      
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.5653746861344!2d110.45387781428276!3d-7.729690694428494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5b960089ec41%3A0xadbb8979b3efc533!2sMasjid%20Nurul%20Islam!5e0!3m2!1sid!2sid!4v1599617062562!5m2!1sid!2sid" width="300" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.5653746861344!2d110.45387781428276!3d-7.729690694428494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5b960089ec41%3A0xadbb8979b3efc533!2sMasjid%20Nurul%20Islam!5e0!3m2!1sid!2sid!4v1599617062562!5m2!1sid!2sid" width="300" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
-      <p class="post_head">Somosari rt 007/rw 004, Ngrangsang, Selomartani, Kec. Kalasan, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55571</p>
-  
+     <p class="post_head">Somosari rt 007/rw 004, Ngrangsang, Selomartani, Kec. Kalasan, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55571</p>
+     
+   </div>
+   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 margin_bottom_30">
+     <div class="full">
+      <div class="footer_blog_2 width_9">
+       <h3>Twitter Feed</h3>
+       <p><i class="fa fa-twitter"></i> Creative_Talent - 26 mins
+        Te invitamos a seguir la cta. de WEntrepreneur_ ¡Atrévete! #Emprendimiento #PyMES #Economía #Bussines #Negocios https://t.co/Y7tZMmxGHn
+      </p>
+      <p><i class="fa fa-twitter"></i> Creative_Talent - 26 mins
+        Te invitamos a seguir la cta. de WEntrepreneur_ ¡Atrévete! #Emprendimiento #PyMES #Economía #Bussines #Negocios https://t.co/Y7tZMmxGHn
+      </p>
+    </div>
   </div>
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 margin_bottom_30">
-   <div class="full">
-    <div class="footer_blog_2 width_9">
-     <h3>Twitter Feed</h3>
-     <p><i class="fa fa-twitter"></i> Creative_Talent - 26 mins
-      Te invitamos a seguir la cta. de WEntrepreneur_ ¡Atrévete! #Emprendimiento #PyMES #Economía #Bussines #Negocios https://t.co/Y7tZMmxGHn
-    </p>
-    <p><i class="fa fa-twitter"></i> Creative_Talent - 26 mins
-      Te invitamos a seguir la cta. de WEntrepreneur_ ¡Atrévete! #Emprendimiento #PyMES #Economía #Bussines #Negocios https://t.co/Y7tZMmxGHn
-    </p>
-  </div>
-</div>
 </div>
 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2 margin_bottom_30">
  <div class="full">
@@ -282,12 +231,12 @@
 <!-- footer bottom -->
 <div class="footer_bottom">
   <div class="row">
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
-    <p>©<strong>MTs Bima Bhakti Pertiwi 2020</strong></p>
-  </div>
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
-    <p>Dessigned and developed by <strong>Ahsegar Team</strong></p>
-  </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
+      <p>©<strong>MTs Bima Bhakti Pertiwi 2020</strong></p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
+      <p>Dessigned and developed by <strong>Ahsegar Team</strong></p>
+    </div>
   </div>
 </div>
 </footer>
