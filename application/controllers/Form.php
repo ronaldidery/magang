@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Form extends CI_Controller {
 
+	//Model di load disini karena ada lebih dari 1 function yang pake
 	public function __construct() 
 	{
 		parent::__construct();
@@ -37,8 +38,8 @@ class Form extends CI_Controller {
 		$this->form_validation->set_rules('nilai_raport', 'Nilai Raport', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('templates/header');
-			$this->load->view('form_daftar',$x);
+			$this->load->view('templates/header', $data);
+			$this->load->view('form_daftar', $x);
 			$this->load->view('templates/footer');
 		} else {
 

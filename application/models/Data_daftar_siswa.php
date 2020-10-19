@@ -3,8 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Data_daftar_siswa extends CI_Model {
 
+	//!!Untuk menampilkan data pada tampilan admin(guru)!!
 	public function getDataSiswa()
 	{
+
+		$query = $this->db->get('form_daftar');
+		return $query->result_array();
 
 	}
 

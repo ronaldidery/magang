@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- basic -->
-
-
   <!-- site metas -->
-  <title>MTs Bima Bhakti</title>
+  <title><?php echo $judul; ?></title>
 
   <!-- site icons -->
   <link rel="icon" href="<?= base_url('assets/templat') ?>/images/fevicon/fevicon.png" type="image/png" />
@@ -40,7 +37,7 @@
           <div class="main_menu float-right">
            <div class="menu">
             <ul class="clearfix">
-             <li class="active"><a href="<?php echo site_url("home"); ?>">Home</a></li>
+             <li><a href="<?= base_url(); ?>">Home</a></li>
              <li><a href="<?php echo site_url("profil"); ?>">Profile</a></li>
              <li><a href="service.html">Service</a></li>
              <li>
