@@ -40,6 +40,19 @@
     <script src="<?= base_url('assets/admin/') ?>assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="<?= base_url('assets/admin/') ?>assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="<?= base_url('assets/admin/') ?>js/pages/chart/chart-page-init.js"></script>
+    <script src="<?= base_url('assets/admin/') ?>jquery/jquery-2.2.3.min.js"></script>
+    <script src="<?= base_url('assets/admin/') ?>js/bootstrap.js"></script>
+    <script src="<?= base_url('assets/admin/') ?>ckeditor/ckeditor.js"></script>
+
+
+    <!--<script src="<?php echo base_url().'assets/jquery/jquery-2.2.3.min.js'?>"></script>
+    <script type="text/javascript" src="<?php echo base_url().'assets/js/bootstrap.js'?>"></script>
+    <script src="<?php echo base_url().'assets/ckeditor/ckeditor.js'?>"></script>-->
+    <script type="text/javascript">
+      $(function () {
+        CKEDITOR.replace('ckeditor');
+      });
+    </script>
 
 </body>
 

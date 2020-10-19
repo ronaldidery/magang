@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/admin/') ?>assets/images/favicon.png">
-    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+    <title><?php echo $judul; ?></title>
     <!-- Custom CSS -->
     <link href="<?= base_url('assets/admin/') ?>assets/libs/flot/css/float-chart.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -46,7 +46,7 @@
                     <!-- This is for the sidebar toggle which is visible on mobile only -->
                     <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
                     <!-- ============================================================== -->
-                    <!-- Logo -->
+                    <!-- Logo --> 
                     <!-- ============================================================== -->
                     <a class="navbar-brand" href="index.html">
                         <!-- Logo icon -->
@@ -206,9 +206,9 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-30">
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" onclick="loadMenu('<?= base_url('barang') ?>')" aria-expanded="false"><i class="mdi mdi-chart-pie"></i><span class="hide-menu">Berita</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" onclick="loadMenu('<?= base_url('departemen') ?>')" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Carousel</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" onclick="loadMenu('<?= base_url('pengadaan') ?>')" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Galeri</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-chart-pie"></i><span class="hide-menu">Berita</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Carousel</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Galeri</span></a></li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
