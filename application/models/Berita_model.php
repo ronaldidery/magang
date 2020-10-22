@@ -1,5 +1,5 @@
 <?php
-class M_berita extends CI_Model{
+class Berita_model extends CI_Model{ 
 
 	function simpan_berita($jdl,$berita,$gambar){
 		$hsl=$this->db->query("INSERT INTO tbl_berita (berita_judul,berita_isi,berita_image) VALUES ('$jdl','$berita','$gambar')");
@@ -13,6 +13,18 @@ class M_berita extends CI_Model{
 
 	function get_all_berita(){
 		$hsl=$this->db->query("SELECT * FROM tbl_berita ORDER BY berita_id DESC");
-		return $hsl;
+		return $hsl->result_array();
 	}
+
+	public function getBerita($limit, $start) 
+	{
+		return $this->db->get('tbl_berita', $limit, $start)->result_array();
+		$this->db->ORDER_BY('berita_id', 'DESC');
+	}
+
+	public function countAllBerita()
+	{
+		return $this->db->get('tbl_berita')->num_rows();
+	}
+
 }
