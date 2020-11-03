@@ -13,27 +13,28 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		$data['judul'] = 'List Data Berita';
-		$data['berita']=$this->berita_model->get_all_berita();
+		$data['berita']=$this->berita_model->getAllBerita();
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/admin', $data);
+		$this->load->view('admin/footer');
 
+		/////PAGINATION UNTUK HALAMAN USER BESOK!!///
 		//Load pagination
 		//$this->load->library("pagination");
 
 		//Config
 		//$config['base_url'] = 'http://localhost/magang/admin/index';
 		//$config['total_rows'] = $this->berita_model->countAllBerita();
-		//$config['per_page'] = 2;
+		//$config['per_page'] = 11;
 
 		//initialize
 		//$this->pagination->initialize($config);
 
 
 		//$data['start'] = $this->uri->segment(3);
-		//$data['berita'] = $this->berita_model->getBerita($config['per_page'], $data['start']);
+		//$data['berita'] = $this->berita_model->getAllBerita($config['per_page'], $data['start']);
 
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/admin', $data);
-		$this->load->view('admin/footer');
 	}
 
 	public function tambah_berita()
@@ -80,6 +81,13 @@ class Admin extends CI_Controller {
 			redirect('admin/tambah_berita');
 		}
 				
+	}
+
+	public function hapus($id)
+	{
+		$this->berita_model->hapusDataBerita($id);
+		$this->session->set_flashdata('flash', 'Dihapus');
+		redirect('admin');
 	}
 
 }

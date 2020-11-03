@@ -5,7 +5,7 @@
 
 <?php if ($this->session->flashdata('flash') ):  ?>
 <div class="alert alert-success alert-dismissible fade show" role="alert">
-  Pendaftaran<strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>.
+  Pendaftaran <strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>.
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -28,6 +28,7 @@
   <div class="col-sm-7">
     <div class="form-group">
       <label> <h4>Nama Lengkap:</h4></label>
+      <small class="form-text text-primary"><?= form_error('nama'); ?></small>
       <input type="text" name="nama" class="form-control" placeholder="Masukan Nama Lengkap">
     </div>
   </div>
@@ -55,7 +56,7 @@
     <div class="form-group">
       <label><h4>Jenis Kelamin:</h4></label>
       <select class="form-control" name="jk">
-        <option>Pilih</option>
+        <option value="0">-PILIH JENIS KELAMIN-</option>
         <option value="1">Laki-laki</option>
         <option value="2">Perempuan</option>
       </select>
@@ -69,7 +70,7 @@
     <div class="form-group">
       <label><h4>Kewarganegaraan:</h4></label>
       <select class="form-control" name="kewarganegaraan">
-        <option>Pilih</option>
+        <option value="0">-PILIH KEWARGANEGARAAN-</option>
         <option value="WNI">Warga Negara Indonesia</option>
         <option value="WNA">Warga Negara Asing</option>
       </select>
@@ -79,7 +80,7 @@
     <div class="form-group">
       <label><h4>Agama:</h4></label>
       <select class="form-control" name="agama">
-        <option>Pilih</option>
+        <option value="0">-PILIH AGAMA-</option>
         <option value="Islam">Islam</option>
         <option value="Kristen">Kristen</option>
         <option value="Katolik">Katolik</option>
@@ -135,7 +136,7 @@
     <div class="form-group">
       <label><h4>Provinsi:</h4></label>
       <select class="form-control" name="provinsi" id="provinsi">
-        <option value="0">-PILIH-</option>
+        <option value="0">-PILIH PROVINSI-</option>
         <?php foreach($data->result() as $row):?>
           <option value="<?php echo $row->id;?>"><?php echo $row->nama;?></option>
         <?php endforeach;?>
@@ -146,6 +147,7 @@
     <div class="form-group">
       <label><h4>Kabupaten:</h4></label>
       <select class="form-control" name="kabupaten" id="kabupaten">
+        <option value="0">-PILIH KABUPATEN-</option>
         <!-- Kabupaten akan diload menggunakan ajax, dan ditampilkan disini -->
       </select>
     </div>
@@ -154,6 +156,7 @@
     <div class="form-group">
       <label><h4>Kecamatan:</h4></label>
       <select class="form-control" name="kecamatan" id="kecamatan">
+        <option value="0">-PILIH KECAMATAN-</option>
         <!-- Kecamatan akan diload menggunakan ajax, dan ditampilkan disini -->
       </select>
     </div>

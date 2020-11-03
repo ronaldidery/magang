@@ -39,7 +39,7 @@ class Form extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('templates/header', $data);
-			$this->load->view('form_daftar', $x);
+			$this->load->view('pendaftaran/form_daftar', $x);
 			$this->load->view('templates/footer');
 		} else {
 

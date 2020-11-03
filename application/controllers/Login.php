@@ -5,6 +5,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('login');
+		$data['judul'] = 'Login Admin';
+		$this->load->view('login/index', $data);
 	}
-}
+} 
