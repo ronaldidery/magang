@@ -16,6 +16,7 @@ class Berita_model extends CI_Model{
 	function getAllBerita() 
 	{
 		return $this->db->query("SELECT * FROM tbl_berita ORDER BY berita_id DESC")->result_array();
+
 	}
 
 	//PAGINATION QUERY UNTUK HALAMAN USER BESOK!!!//
@@ -33,8 +34,15 @@ class Berita_model extends CI_Model{
 
 	public function hapusDataBerita($id)
 	{
-		$this->db->where('berita_id', $id);
-		$this->db->delete('tbl_berita');
+		//tanda [] bisa diartikan where dan array
+		//$this->db->where('berita_id', $id);
+		$this->db->delete('tbl_berita', ['berita_id' => $id]);
+	}
+
+	public function getBeritaById($id)
+	{
+		//tanda [] mengartikan array dan didalamnya ada id. row_array untuk mengambil 1 baris
+		return $this->db->get_where('tbl_berita', ['berita_id' => $id])->row_array();
 	}
 
 }

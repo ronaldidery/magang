@@ -13,7 +13,7 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		$data['judul'] = 'List Data Berita';
-		$data['berita']=$this->berita_model->getAllBerita();
+		$data['berita'] = $this->berita_model->getAllBerita();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/admin', $data);
 		$this->load->view('admin/footer');
@@ -88,6 +88,16 @@ class Admin extends CI_Controller {
 		$this->berita_model->hapusDataBerita($id);
 		$this->session->set_flashdata('flash', 'Dihapus');
 		redirect('admin');
+	}
+
+	public function detail($id)
+	{
+		$data['judul'] = 'Detail Data Berita';
+		$data['berita'] = $this->berita_model->getBeritaById($id);
+
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/berita/detail_berita', $data);
+		$this->load->view('admin/footer');
 	}
 
 }

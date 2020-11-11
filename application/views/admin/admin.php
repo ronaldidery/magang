@@ -36,49 +36,49 @@
                     <?php endif; ?>
 
                     <h4>Daftar Berita</h4>
-                        <?php   
-                        function limit_words($string, $word_limit){
-                            $words = explode(" ",$string);
-                            return implode(" ",array_splice($words,0,$word_limit));
-                        }
-                        ?>
+                    <?php   
+                    function limit_words($string, $word_limit){
+                        $words = explode(" ",$string);
+                        return implode(" ",array_splice($words,0,$word_limit));
+                    }
+                    ?>
 
-                        <table class="table table-bordered table-striped" id="mydata">
-                            <thead>
+                    <table class="table table-bordered table-striped" id="mydata">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Judul</th>
+                                <th>Deskripsi</th>
+                                <th>Foto</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $i = 1;
+                            foreach ($berita as $brt) : ?>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Judul</th>
-                                    <th>Deskripsi</th>
-                                    <th>Foto</th>
-                                    <th>Action</th>
+                                    <th><?= $i++ ?></th>
+                                    <td><?= $brt['berita_judul']; ?></td>
+                                    <td><?= limit_words($brt['berita_isi'],20);?>..</td>
+                                    <td>
+                                        <img src="<?php echo base_url().'assets/images/'.$brt['berita_image'];?>" width="70">
+                                    </td>
+                                    <td>
+            <a href="<?= base_url(); ?>admin/detail/<?= $brt['berita_id'];?>" class="badge badge-warning">detail</a>
+            <a href="#" class="badge badge-success">edit</a>
+            <a href="<?= base_url(); ?>admin/hapus/<?= $brt['berita_id'];?>" class="badge badge-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <?php $i = 1;
-                                foreach ($berita as $brt) : ?>
-                                    <tr>
-                                        <th><?= $i++ ?></th>
-                                        <td><?= $brt['berita_judul']; ?></td>
-                                        <td><?= limit_words($brt['berita_isi'],20);?>..</td>
-                                        <td>
-                                            <img src="<?php echo base_url().'assets/images/'.$brt['berita_image'];?>" width="70">
-                                        </td>
-                                        <td>
-        <a href="#" class="badge badge-warning">detail</a>
-        <a href="#" class="badge badge-success">edit</a>
-        <a href="<?= base_url(); ?>admin/hapus/<?= $brt['berita_id'];?>" class="badge badge-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?> 
-                            </tbody>
-                        </table>
+                            <?php endforeach; ?> 
+                        </tbody>
+                    </table>
 
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- End Container fluid  -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->

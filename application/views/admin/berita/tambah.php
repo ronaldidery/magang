@@ -23,13 +23,13 @@
 				<div class="card">
 					<div class="card-body">
 						<div class="col-md-10 col-md-offset-2">
-							<h2>Form Tambah Berita</h2><hr/>
+							<h3>Form Tambah Berita</h3><hr/>
 							<form action="<?php echo base_url('admin/simpan_post')?>" method="post" enctype="multipart/form-data">
-								<h4>Judul Berita:</h4>
+								<h5>Judul Berita:</h5>
 								<input type="text" name="judul" class="form-control" placeholder="Judul berita" required/><br/>
-								<h4>Deskripsi Berita:</h4>
+								<h5>Deskripsi Berita:</h5>
 								<textarea id="ckeditor" name="berita" class="form-control" required></textarea><br/>
-								<h4>Upload Foto</h4>
+								<h5>Upload Foto</h5>
 								<input type="file" name="filefoto" required><br>
 								<button class="btn btn-primary btn-lg mt-2" type="submit">Post Berita</button>
 							</form>
