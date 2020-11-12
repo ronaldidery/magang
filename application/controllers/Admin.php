@@ -12,6 +12,10 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
+		//session LOGIN!!
+		//$data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('email')])->row_array();
+
+
 		$data['judul'] = 'List Data Berita';
 		$data['berita'] = $this->berita_model->getAllBerita();
 		$this->load->view('admin/header', $data);

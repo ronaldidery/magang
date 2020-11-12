@@ -28,14 +28,15 @@
   <div class="col-sm-7">
     <div class="form-group">
       <label> <h4>Nama Lengkap:</h4></label>
-      <small class="form-text text-primary"><?= form_error('nama'); ?></small>
-      <input type="text" name="nama" class="form-control" placeholder="Masukan Nama Lengkap">
+      <input type="text" name="nama" class="form-control" placeholder="Masukan Nama Lengkap" value="<?= set_value('nama') ?>">
+      <?= form_error('nama', '<small class="text-danger">', '</small>'); ?>
     </div>
   </div>
   <div class="col-sm-5">
     <div class="form-group">
       <label><h4>Nomor Identitas (NIK):</h4></label>
-      <input type="text" name="nik" class="form-control" placeholder="Masukan Nomor NIK">
+      <input type="text" name="nik" class="form-control" placeholder="Masukan Nomor NIK" value="<?= set_value('nik') ?>">
+      <?= form_error('nik', '<small class="text-danger">', '</small>'); ?>
     </div>
   </div>
 </div>
@@ -43,13 +44,14 @@
   <div class="col-sm-4">
     <div class="form-group">
       <label><h4>Tempat Lahir:</h4></label>
-      <input type="text" name="tempat_lahir" class="form-control" placeholder="Masukan Tempat Lahir">
+      <input type="text" name="tempat_lahir" class="form-control" placeholder="Masukan Tempat Lahir" value="<?= set_value('tempat_lahir') ?>">
+      <?= form_error('tempat_lahir', '<small class="text-danger">', '</small>'); ?>
     </div>
   </div>
   <div class="col-sm-3">
     <div class="form-group">
       <label><h4>Tanggal Lahir:</h4></label>
-      <input type="date" name="tanggal_lahir" class="form-control">
+      <input type="date" name="tanggal_lahir" class="form-control" value="<?= set_value('tanggal_lahir') ?>">
     </div>
   </div>
   <div class="col-sm-5">
@@ -93,7 +95,7 @@
   <div class="col-sm-5">
     <div class="form-group">
       <label><h4>Nama Ibu Kandung:</h4></label>
-      <input type="text" name="nama_ibu" class="form-control" placeholder="Masukan Nama Ibu Kandung">
+      <input type="text" name="nama_ibu" class="form-control" placeholder="Masukan Nama Ibu Kandung" value="<?= set_value('nama_ibu') ?>">
     </div>
   </div>
 </div>
@@ -102,13 +104,14 @@
   <div class="col-sm-4">
     <div class="form-group">
       <label><h4>Email:</h4></label>
-      <input type="email" name="email" class="form-control" placeholder="Masukan Email">
+      <input type="email" name="email" class="form-control" placeholder="Masukan Email" value="<?= set_value('email') ?>">
+      <?= form_error('email', '<small class="text-danger">', '</small>'); ?>
     </div>
   </div>
   <div class="col-sm-3">
     <div class="form-group">
       <label><h4>No Telp:</h4></label>
-      <input type="text" name="no_telp" class="form-control" placeholder="Masukan No Telp">
+      <input type="text" name="no_telp" class="form-control" placeholder="Masukan No Telp" value="<?= set_value('no_telp') ?>">
     </div>
   </div>
 </div>
@@ -119,13 +122,14 @@
   <div class="col-sm-5">
     <div class="form-group">
       <label><h4>Alamat:</h4></label>
-      <textarea class="form-control" name="alamat" rows="2" id="alamat"></textarea>
+      <textarea class="form-control" name="alamat" rows="2" id="alamat" value="<?= set_value('alamat') ?>"></textarea>
+      <?= form_error('alamat', '<small class="text-danger">', '</small>'); ?>
     </div>
   </div>
   <div class="col-sm-2">
     <div class="form-group">
       <label><h4>Kode Pos:</h4></label>
-      <input type="text" name="kode_pos" class="form-control" placeholder="Kode Pos">
+      <input type="text" name="kode_pos" class="form-control" placeholder="Kode Pos" value="<?= set_value('kode_pos') ?>">
     </div>
   </div>
 </div>
@@ -180,14 +184,15 @@
   <div class="col-sm-4">
     <div class="form-group">
       <label><h4>Nama Sekolah:</h4></label>
-      <input type="text" name="sekolah" class="form-control" placeholder="Masukan Nama Sekolah">
+      <input type="text" name="sekolah" class="form-control" placeholder="Masukan Nama Sekolah" value="<?= set_value('sekolah') ?>">
     </div>
   </div>
   <div class="col-sm-4">
     <div class="form-group">
       <label><h4>Rata-rata Nilai Rapor Kelas 6:</h4></label>
       <input type="text" name="nilai_raport" class="form-control"
-      placeholder="Masukan Rata-rata nilai raport">
+      placeholder="Masukan Rata-rata nilai raport" value="<?= set_value('nilai_raport') ?>">
+      <?= form_error('nilai_raport', '<small class="text-danger">', '</small>'); ?>
     </div>
   </div>
 </div>
