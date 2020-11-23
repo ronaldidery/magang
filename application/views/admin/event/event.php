@@ -24,18 +24,18 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <a href="<?= base_url('admin/tambah_berita') ?>" class="btn btn-primary">Tambah Berita</a>
+                        <a href="<?= base_url('admin/tambah_admin') ?>" class="btn btn-primary">Tambah Event</a>
                         <hr/>
                         <?php if ($this->session->flashdata('flash') ):  ?>
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                              Berita <strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>.
+                              Event <strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>.
                               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                     <?php endif; ?>
 
-                    <h4>Daftar Berita</h4>
+                    <h4>Daftar Event Highlight</h4>
                     <?php   
                     function limit_words($string, $word_limit){
                         $words = explode(" ",$string);
@@ -53,7 +53,7 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <!--<tbody>
                             <?php $i = 1;
                             foreach ($berita as $brt) : ?>
                                 <tr>
@@ -70,7 +70,7 @@
                                     </td>
                                 </tr>
                             <?php endforeach; ?> 
-                        </tbody>
+                        </tbody>-->
                     </table>
 
                 </div>

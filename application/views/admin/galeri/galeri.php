@@ -24,18 +24,18 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <a href="<?= base_url('admin/tambah_berita') ?>" class="btn btn-primary">Tambah Berita</a>
+                        <a href="<?= base_url('admin/galeri/tambah_galeri') ?>" class="btn btn-primary">Tambah Foto Galeri</a>
                         <hr/>
                         <?php if ($this->session->flashdata('flash') ):  ?>
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                              Berita <strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>.
+                              Foto <strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>.
                               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                     <?php endif; ?>
 
-                    <h4>Daftar Berita</h4>
+                    <h4>Daftar Foto Galeri</h4>
                     <?php   
                     function limit_words($string, $word_limit){
                         $words = explode(" ",$string);
@@ -46,14 +46,14 @@
                     <table class="table table-bordered table-striped" id="mydata">
                         <thead>
                             <tr>
-                                <th>No</th>
+                                <th>#</th>
                                 <th>Judul</th>
                                 <th>Deskripsi</th>
                                 <th>Foto</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <!--<tbody>
                             <?php $i = 1;
                             foreach ($berita as $brt) : ?>
                                 <tr>
@@ -70,7 +70,7 @@
                                     </td>
                                 </tr>
                             <?php endforeach; ?> 
-                        </tbody>
+                        </tbody>-->
                     </table>
 
                 </div>

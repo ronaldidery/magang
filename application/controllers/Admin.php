@@ -10,10 +10,10 @@ class Admin extends CI_Controller {
         $this->load->library('upload');
 	}
 
-	public function index()
+	public function index() 
 	{
 		//session LOGIN!!
-		//$data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('email')])->row_array();
+		//$data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
 
 
 		$data['judul'] = 'List Data Berita';

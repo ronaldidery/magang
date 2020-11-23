@@ -8,16 +8,14 @@
         <?= $this->session->flashdata('message'); ?>
 
         <div class="card-body">
-          <form action="">
+          <form action="<?= base_url('login'); ?>" method="post">
             <div class="form-group">
               <input type="text" name="username" class="form-control" placeholder="Username">
+              <?= form_error('username', '<small class="text-danger">', '</small>'); ?>
             </div>
             <div class="form-group">
-              <input type="text" name="password" class="form-control" placeholder="Password">
-            </div>
-            <div class="form-group custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-              <label class="custom-control-label" for="customControlAutosizing">Remember me</label>
+              <input type="password" name="password" class="form-control" placeholder="Password">
+              <?= form_error('password', '<small class="text-danger">', '</small>'); ?>
             </div>
             <div class="form-group">
               <input type="submit" name="" value="Login" class="btn btn-primary btn-block">
