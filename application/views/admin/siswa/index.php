@@ -25,9 +25,7 @@
     <div class="container-fluid">
         <div class="breadcrumb">
             <div class="card-footer clearfix">
-                <a href="<?= base_url('siswa/tambah_siswa') ?>">
-                    <button type="button" class="btn bg-success float-right"><i class="fas fa-plus"></i>Tambah Data Siswa</button>
-                </a>
+                <button type="button" class="btn bg-success float-right" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i> Tambah Data Siswa</button>
             </div>
         </div>
         <hr/>
@@ -52,9 +50,9 @@
                 <th width="20">No</th>
                 <th width="330">Nama</th>
                 <th width="150">NIS</th>
-                <th width="150">Kelas</th>
+                <th width="100">Kelas</th>
                 <th width="150">No HP</th>
-                <th width="200">Action</th>
+                <th width="250">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -79,6 +77,41 @@
 </div>
 </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Form tambah data siswa</h4>
+        <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <form action="<?php echo base_url('siswa/simpan_post')?>" method="post" enctype="multipart/form-data">
+            <h5>Nama Siswa:</h5>
+            <input type="text" name="nama_siswa" class="form-control" placeholder="Nama siswa" required/><br/>
+            <h5>NIS Siswa:</h5>
+            <input type="text" name="nis_siswa" class="form-control" placeholder="NIS siswa" required/><br/>
+            <h5>Kelas:</h5>
+            <select class="form-control mb-4 col-sm-3" name="kelas">
+                <option value="NULL">-PILIH KELAS-</option>
+                <option value="VII">VII</option>
+                <option value="VIII">VIII</option>
+                <option value="IX">IX</option>
+            </select>
+            <h5>No HP:</h5>
+            <input type="text" name="nomor" class="form-control" placeholder="Nomor HP" required/><br/>
+            <div class="modal-footer">
+                <button type="reset" class="btn btn-danger">Reset</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+<!-- End Modal -->
+
 </div>
 <!-- ============================================================== -->
 <!-- End Container fluid  -->

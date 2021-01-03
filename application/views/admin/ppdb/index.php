@@ -56,11 +56,11 @@
                 <thead>
                     <tr>
                         <th width="20">No</th>
-                        <th width="330">Nama</th>
+                        <th width="350">Nama</th>
                         <th width="150">NISN</th>
                         <th width="150">NIK</th>
                         <th width="150">No HP</th>
-                        <th width="200">Action</th>
+                        <th width="180">Action</th>
                     </tr>
                 </thead>
                         <tbody>
@@ -74,7 +74,6 @@
                                     <td><?= $value['no_tlp']; ?></td>
                                     <td>
             <a href="<?= base_url();?>" class="btn bg-warning">detail</a>
-            <a href="#" class="btn bg-success">edit</a>
             <a href="<?= base_url(); ?>" class="btn bg-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
                                     </td>
                                 </tr>

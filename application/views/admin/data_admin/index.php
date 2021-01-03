@@ -58,10 +58,10 @@
         <thead>
             <tr>
                 <th width="20">No</th>
-                <th width="380">Nama</th>
+                <th width="150">Foto</th>
                 <th width="200">Username</th>
                 <th width="200">Password</th>
-                <th width="200">Action</th>
+                <th width="250">Action</th>
             </tr>
         </thead>
                     <!-- <tbody>

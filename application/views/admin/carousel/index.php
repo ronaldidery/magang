@@ -25,9 +25,7 @@
     <div class="container-fluid">
         <div class="breadcrumb">
             <div class="card-footer clearfix">
-                <a href="<?= base_url('carousel/tambah_carousel') ?>">
-                    <button type="button" class="btn bg-success float-right"><i class="fas fa-plus"></i> Tambah Carousel</button>
-                </a>
+                <button type="button" class="btn bg-success float-right" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i> Tambah Carousel</button>
             </div>
         </div>
         <hr/>
@@ -60,8 +58,8 @@
                 <th width="20">No</th>
                 <th width="380">Judul</th>
                 <th width="200">Tanggal upload</th>
-                <th width="200">Foto</th>
-                <th width="200">Action</th>
+                <th width="150">Foto</th>
+                <th width="250">Action</th>
             </tr>
         </thead>
                         <tbody>
@@ -87,6 +85,31 @@
     </div>
         </div>
     </section>
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Form tambah carousel</h4>
+        <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <form action="<?php echo base_url('carousel/simpan_post')?>" method="post" enctype="multipart/form-data">
+            <h5>Judul Carousel:</h5>
+            <input type="text" name="judul" class="form-control" placeholder="Judul carousel" required/><br/>
+            <h5>Upload Foto</h5>
+            <input type="file" name="filefoto" required><br/><br/>
+            <div class="modal-footer">
+                <button type="reset" class="btn btn-danger">Reset</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+
 </div>
 <!-- ============================================================== -->
 <!-- End Container fluid  -->

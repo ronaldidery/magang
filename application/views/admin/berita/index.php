@@ -1,5 +1,5 @@
 <!-- ============================================================== -->
-<!-- Page wrapper  --> 
+<!-- Page wrapper  -->
 <!-- ============================================================== -->
 <div class="content-wrapper">
 
@@ -60,8 +60,8 @@
                     <th width="20">No</th>
                     <th width="200">Judul</th>
                     <th width="380">Deskripsi</th>
-                    <th width="200">Foto</th>
-                    <th width="200">Action</th>
+                    <th width="150">Foto</th>
+                    <th width="250">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -103,7 +103,7 @@
             <h5>Deskripsi Berita:</h5>
             <textarea id="ckeditor" name="berita" class="form-control" required></textarea><br/>
             <h5>Upload Foto</h5>
-            <input type="file" name="filefoto" required><br/>
+            <input type="file" name="filefoto" required><br/><br/>
             <div class="modal-footer">
                 <button type="reset" class="btn btn-danger">Reset</button>
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -113,6 +113,7 @@
 </div>
 </div>
 </div>
+<!-- End Modal -->
 
 </div>
 <!-- ============================================================== -->
