@@ -78,7 +78,7 @@
     <p>©<strong>MTs Bima Bhakti Pertiwi 2020</strong></p>
   </div>
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
-    <p>Dessigned and developed by <strong>Ahsegar Team</strong></p>
+    <p>Dessigned and developed by <strong>Ahsegar Team</strong></p> 
   </div>
   </div>
 </div>
@@ -96,5 +96,57 @@
 <!-- google map js -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
 <!-- end google map js -->
+    <script>
+
+        $("#provinsi").change(function(){
+
+            // variabel dari nilai combo box kendaraan
+            var id_prov = $("#provinsi").val();
+
+            // Menggunakan ajax untuk mengirim dan dan menerima data dari server
+            $.ajax({
+                url : "<?php echo base_url();?>/form/get_kabupaten",
+                method : "POST",
+                data : {id_prov:id_prov},
+                async : false,
+                dataType : 'json',
+                success: function(data){
+                    var html = '';
+                    var i;
+
+                    for(i=0; i<data.length; i++){
+                        html += '<option value='+data[i].id+'>'+data[i].nama+'</option>';
+                    }
+                    $('#kabupaten').html(html);
+
+                }
+            });
+        });
+
+        $("#kabupaten").change(function(){
+
+            // variabel dari nilai combo box kendaraan
+            var id_kab = $("#kabupaten").val();
+
+            // Menggunakan ajax untuk mengirim dan dan menerima data dari server
+            $.ajax({
+                url : "<?php echo base_url();?>/form/get_kecamatan",
+                method : "POST",
+                data : {id_kab:id_kab},
+                async : false,
+                dataType : 'json',
+                success: function(data){
+                    var html = '';
+                    var i;
+
+                    for(i=0; i<data.length; i++){
+                        html += '<option value='+data[i].id+'>'+data[i].nama+'</option>';
+                    }
+                    $('#kecamatan').html(html);
+
+                }
+            });
+        });
+    </script>
 </body>
 </html>

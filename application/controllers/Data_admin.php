@@ -7,7 +7,15 @@ class Data_admin extends CI_Controller {
 	{
 		$data['judul'] = 'Data Akun Admin';
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/data_admin/data_admin');
+		$this->load->view('admin/data_admin/index');
+		$this->load->view('admin/footer');
+	}
+
+	public function tambah_admin()
+	{
+		$data['judul'] = 'Form Tambah User Admin';
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/data_admin/tambah');
 		$this->load->view('admin/footer');
 	}
 }

@@ -1,7 +1,7 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class Admin extends CI_Controller {
+class Admin extends CI_Controller { 
 
 	public function __construct()
 	{
@@ -10,7 +10,7 @@ class Admin extends CI_Controller {
         $this->load->library('upload');
 	}
 
-	public function index() 
+	public function index()
 	{
 		//session LOGIN!!
 		//$data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
@@ -19,7 +19,7 @@ class Admin extends CI_Controller {
 		$data['judul'] = 'List Data Berita';
 		$data['berita'] = $this->berita_model->getAllBerita();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/admin', $data);
+		$this->load->view('admin/berita/index', $data);
 		$this->load->view('admin/footer');
 
 		/////PAGINATION UNTUK HALAMAN USER BESOK!!///
@@ -34,11 +34,8 @@ class Admin extends CI_Controller {
 		//initialize
 		//$this->pagination->initialize($config);
 
-
 		//$data['start'] = $this->uri->segment(3);
 		//$data['berita'] = $this->berita_model->getAllBerita($config['per_page'], $data['start']);
-
-
 	}
 
 	public function tambah_berita()
@@ -51,7 +48,7 @@ class Admin extends CI_Controller {
 
 	public function simpan_post()
 	{
-		$config['upload_path'] = './assets/images/'; //path folder
+		$config['upload_path'] = './assets/foto/berita/'; //path folder
 	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 	    $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
@@ -61,21 +58,22 @@ class Admin extends CI_Controller {
 	        	$gbr = $this->upload->data();
 	            //Compress Image
 	            $config['image_library']='gd2';
-	            $config['source_image']='./assets/images/'.$gbr['file_name'];
+	            $config['source_image']='./assets/foto/berita/'.$gbr['file_name'];
 	            $config['create_thumb']= FALSE;
 	            $config['maintain_ratio']= FALSE;
 	            $config['quality']= '60%';
 	            $config['width']= 710;
 	            $config['height']= 420;
-	            $config['new_image']= './assets/images/'.$gbr['file_name'];
+	            $config['new_image']= './assets/foto/berita/'.$gbr['file_name'];
 	            $this->load->library('image_lib', $config);
 	            $this->image_lib->resize();
 
 	            $gambar=$gbr['file_name'];
-                $jdl=$this->input->post('judul');
-                $berita=$this->input->post('berita');
+                $jdl=$this->input->post('judul', TRUE);
+                $berita=$this->input->post('berita', TRUE);
 
 				$this->berita_model->simpan_berita($jdl,$berita,$gambar);
+				$this->session->set_flashdata('flash', 'Ditambahkan');
 				redirect('admin');
 		}else{
 			redirect('admin/tambah_berita');
@@ -83,8 +81,7 @@ class Admin extends CI_Controller {
 	                 
 	    }else{
 			redirect('admin/tambah_berita');
-		}
-				
+		}		
 	}
 
 	public function hapus($id)
@@ -92,7 +89,7 @@ class Admin extends CI_Controller {
 		$this->berita_model->hapusDataBerita($id);
 		$this->session->set_flashdata('flash', 'Dihapus');
 		redirect('admin');
-	}
+	} 
 
 	public function detail($id)
 	{
@@ -100,7 +97,7 @@ class Admin extends CI_Controller {
 		$data['berita'] = $this->berita_model->getBeritaById($id);
 
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/berita/detail_berita', $data);
+		$this->load->view('admin/berita/detail', $data);
 		$this->load->view('admin/footer');
 	}
 

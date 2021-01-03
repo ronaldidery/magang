@@ -1,10 +1,17 @@
-<?php
+<?php 
 class Berita_model extends CI_Model{ 
-
+ 
 	function simpan_berita($jdl,$berita,$gambar)
 	{
-		$hsl=$this->db->query("INSERT INTO tbl_berita (berita_judul,berita_isi,berita_image) VALUES ('$jdl','$berita','$gambar')");
-		return $hsl;
+		//$hsl=$this->db->query("INSERT INTO tbl_berita (berita_judul,berita_isi,berita_image) VALUES ('$jdl','$berita','$gambar')");
+		//return $hsl;
+		//Insert Menggunakan Modul CODEIGNITER
+		$data = array(
+			'berita_judul' => $jdl,
+			'berita_isi' =>  $berita,
+			'berita_image' => $gambar
+		);
+		return $this->db->INSERT('tbl_berita', $data);
 	}
 
 	function get_berita_by_kode($kode)
@@ -15,8 +22,8 @@ class Berita_model extends CI_Model{
 
 	function getAllBerita() 
 	{
-		return $this->db->query("SELECT * FROM tbl_berita ORDER BY berita_id DESC")->result_array();
-
+		$this->db->order_by('berita_id', 'DESC');
+		return $this->db->get('tbl_berita')->result_array();
 	}
 
 	//PAGINATION QUERY UNTUK HALAMAN USER BESOK!!!//
@@ -34,9 +41,15 @@ class Berita_model extends CI_Model{
 
 	public function hapusDataBerita($id)
 	{
+		$row = $this->db->where('berita_id',$id)->get('tbl_berita')->row();
+        unlink('assets/foto/berita/'.$row->berita_image);
+        $this->db->where('berita_id', $id);
+        $this->db->delete('tbl_berita', ['berita_id' => $id]);
+        return true; 
 		//tanda [] bisa diartikan where dan array
 		//$this->db->where('berita_id', $id);
-		$this->db->delete('tbl_berita', ['berita_id' => $id]);
+		//$this->db->delete('tbl_berita', ['berita_id' => $id]);
+
 	}
 
 	public function getBeritaById($id)

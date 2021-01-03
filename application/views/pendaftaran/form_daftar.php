@@ -13,7 +13,7 @@
 <?php endif; ?>
 
 <div class="container p-3 my-3 border">
- <form id="form" method="post" action="">
+ <form id="form" method="post" action="<?= base_url('form'); ?>">
 
   <?php if( validation_errors() ): ?>
     <div class="alert alert-danger" role="alert">
@@ -58,9 +58,9 @@
     <div class="form-group">
       <label><h4>Jenis Kelamin:</h4></label>
       <select class="form-control" name="jk">
-        <option value="0">-PILIH JENIS KELAMIN-</option>
-        <option value="1">Laki-laki</option>
-        <option value="2">Perempuan</option>
+        <option value="NULL">-PILIH JENIS KELAMIN-</option>
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
       </select>
     </div>
   </div>
@@ -72,7 +72,7 @@
     <div class="form-group">
       <label><h4>Kewarganegaraan:</h4></label>
       <select class="form-control" name="kewarganegaraan">
-        <option value="0">-PILIH KEWARGANEGARAAN-</option>
+        <option value="NULL">-PILIH KEWARGANEGARAAN-</option>
         <option value="WNI">Warga Negara Indonesia</option>
         <option value="WNA">Warga Negara Asing</option>
       </select>
@@ -82,7 +82,7 @@
     <div class="form-group">
       <label><h4>Agama:</h4></label>
       <select class="form-control" name="agama">
-        <option value="0">-PILIH AGAMA-</option>
+        <option value="NULL">-PILIH AGAMA-</option>
         <option value="Islam">Islam</option>
         <option value="Kristen">Kristen</option>
         <option value="Katolik">Katolik</option>
@@ -94,8 +94,8 @@
   </div>
   <div class="col-sm-5">
     <div class="form-group">
-      <label><h4>Nama Ibu Kandung:</h4></label>
-      <input type="text" name="nama_ibu" class="form-control" placeholder="Masukan Nama Ibu Kandung" value="<?= set_value('nama_ibu') ?>">
+      <label><h4>Nama Orang Tua/Wali:</h4></label>
+      <input type="text" name="nama_wali" class="form-control" placeholder="Masukan Nama Ibu Kandung" value="<?= set_value('nama_wali') ?>">
     </div>
   </div>
 </div>
@@ -112,6 +112,7 @@
     <div class="form-group">
       <label><h4>No Telp:</h4></label>
       <input type="text" name="no_telp" class="form-control" placeholder="Masukan No Telp" value="<?= set_value('no_telp') ?>">
+      <?= form_error('no_telp', '<small class="text-danger">', '</small>'); ?>
     </div>
   </div>
 </div>
@@ -141,7 +142,7 @@
       <label><h4>Provinsi:</h4></label>
       <select class="form-control" name="provinsi" id="provinsi">
         <option value="0">-PILIH PROVINSI-</option>
-        <?php foreach($data->result() as $row):?>
+       <?php foreach($data->result() as $row):?>
           <option value="<?php echo $row->id;?>"><?php echo $row->nama;?></option>
         <?php endforeach;?>
       </select>
@@ -176,15 +177,16 @@
     <div class="form-group">
       <label><h4>Pendidikan Terakhir:</h4></label>
       <select class="form-control" name="pendidikan">
-        <option value="SMA-IPA">SD</option>
-        <option value="SMA-IPS">MI</option>
+        <option value="NULL">-PILIH PENDIDIKAN TERAKHIR-</option>
+        <option value="SD">SD</option>
+        <option value="MI">MI</option>
       </select>
     </div>
   </div>
   <div class="col-sm-4">
     <div class="form-group">
       <label><h4>Nama Sekolah:</h4></label>
-      <input type="text" name="sekolah" class="form-control" placeholder="Masukan Nama Sekolah" value="<?= set_value('sekolah') ?>">
+      <input type="text" name="nama_sekolah" class="form-control" placeholder="Masukan Nama Sekolah" value="<?= set_value('sekolah') ?>">
     </div>
   </div>
   <div class="col-sm-4">
@@ -196,50 +198,24 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label><h4>NISN:</h4></label>
+      <input type="text" name="nisn" class="form-control" placeholder="Masukan NISN" value="<?= set_value('nisn') ?>">
+      <?= form_error('nisn', '<small class="text-danger">', '</small>'); ?>
+    </div>
+  </div>
+</div>
 
 <div class="row">
   <div class="col-sm-6">
     <button type="submit" name="Submit" id="Submit" class="btn btn-primary">Daftar</button>
     <button type="reset" class="btn btn-secondary">Reset</button>
   </div>
-
 </div>
-</form>
+</form> 
 </div>
 </div>
 
 <!--end form pendataran-->
-
-<script>
-  $("#provinsi").change(function() {
-                 //variabel dari nilai combo provinsi
-                 var provinsi_id = $("#provinsi").val();
-
-                // Menggunakan ajax untuk mengirim dan dan menerima data dari server
-                $.ajax({
-                  type: "POST",
-                  dataType: "html",
-                  url: "<?php echo base_url();?>form/get_kabupaten",
-                  data: "provinsi=" + provinsi_id,
-                  success: function(data) {
-                    $("#kabupaten").html(data);
-                  }
-                });
-              });
-
-  $("#kabupaten").change(function() {
-            // variabel dari nilai combo box kabupaten
-            var kabupaten_id = $("#kabupaten").val();
-
-                // Menggunakan ajax untuk mengirim dan dan menerima data dari server
-                $.ajax({
-                  type: "POST",
-                  dataType: "html",
-                  url: "ambil-data.php",
-                  data: "kabupaten=" + kabupaten_id,
-                  success: function(data) {
-                    $("#kecamatan").html(data);
-                  }
-                });
-              });
-            </script>
