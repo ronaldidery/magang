@@ -30,9 +30,11 @@
                 </a>
             </div>
             <div class="card-footer clearfix">
-                <button type="button" class="btn bg-success float-right" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i> Tambah Berita</button>
+                <button type="button" class="btn bg-success float-right" data-toggle="modal" data-target="#tambahModal"><i class="fas fa-plus"></i> Tambah Berita</button>
             </div>
         </div>
+        
+        <!-- Flash data -->
         <?php if ($this->session->flashdata('flash') ):  ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
               Berita <strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>.
@@ -78,6 +80,7 @@
                             <a href="<?= base_url(); ?>admin/detail/<?= $value['berita_id'];?>" class="btn bg-warning">detail</a>
                             <a href="#" class="btn bg-success">edit</a>
                             <a href="<?= base_url(); ?>admin/hapus/<?= $value['berita_id'];?>" class="btn bg-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
+                            <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['berita_id'];?>"> detail</a>
                         </td>
                     </tr>
                 <?php endforeach; ?> 
@@ -88,8 +91,8 @@
 </div>
 </section>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal Tambah -->
+<div class="modal fade" id="tambahModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
@@ -113,9 +116,40 @@
 </div>
 </div>
 </div>
-<!-- End Modal -->
+<!-- End Modal Tambah -->
+
+<!-- Modal Detail -->
+<?php $no = 0;
+foreach ($berita as $value) : $no++ ?>
+
+<div class="modal fade" id="detailModal<?=$value['berita_id'];?>"tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Detail berita</h4>
+        <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <div class="card mb-3 card-body">
+            <h2><?= $value['berita_judul']; ?></h2>
+            <div class="card-body">
+                <img src="<?php echo base_url().'assets/foto/berita/'.$value['berita_image'];?>" class="card-img">
+                <p class="card-text"><?= $value['berita_isi']; ?></p>
+                <p class="card-text"><small class="text-muted">Diupload <?= $value['berita_tanggal']; ?></small></p>
+            </div>      
+        </div>
+        <div class="modal-footer">
+            <button type="close" data-dismiss="modal" class="btn btn-primary">Close</button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<?php endforeach; ?>
+<!-- End Modal Detail -->
 
 </div>
+
 <!-- ============================================================== -->
 <!-- End Container fluid  -->
 <!-- ============================================================== -->
