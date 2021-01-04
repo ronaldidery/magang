@@ -26,10 +26,15 @@
             <div class="breadcrumb">
                 <div class="card-footer clearfix">
                     <a href="<?= base_url('ppdb/print_data') ?>">
-                        <button type="button" class="btn bg-warning float-right"><i class="fas fa-print"></i> Print PPDB</button>
+                        <button type="button" class="btn bg-warning float-right"><i class="fas fa-print"></i> Print</button>
                     </a>
                 </div>
-            </div>
+                <div class="card-footer clearfix">
+                    <a href="<?= base_url('ppdb/pdf') ?>">
+                        <button type="button" class="btn bg-danger float-right"><i class="fas fa-print"></i> Export PDF</button>
+                    </a>
+                </div>
+            </div> 
             <hr/>
             <?php if ($this->session->flashdata('flash') ):  ?>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
