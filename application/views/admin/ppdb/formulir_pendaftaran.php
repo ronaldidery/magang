@@ -73,7 +73,7 @@
             </tbody>
         </table>
         <hr>
-        <table border="0" align="center" width="800" cellpadding="0" cellspacing="0">
+        <table border="0" align="center" width="800" cellpadding="0" cellspacing="8" >
             <tbody>
                 <?php ($value) ?>
                 <tr>
@@ -128,6 +128,63 @@
                     <td>No Telpon</td>
                     <td>:</td>
                     <td><?= $value['no_tlp'];?></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <?php ($value) ?>
+                <tr>
+                    <td colspan="3"><strong>Data Alamat Asal :</strong></td>
+                </tr>
+                <tr>
+                    <td width="180">Alamat</td>
+                    <td width="12">:</td>
+                    <td width="470"><?= $value['alamat_pendaftar'];?></td>
+                </tr>
+                <tr>
+                    <td>Kode Pos</td>
+                    <td>:</td>
+                    <td><?= $value['pos'];?></td>
+                </tr>
+                <tr>
+                    <td>Provinsi</td>
+                    <td>:</td>
+                    <td><?= $value['id_provinsi'];?></td>
+                </tr>
+                <tr>
+                    <td>Kabupaten</td>
+                    <td>:</td>
+                    <td><?= $value['id_kabupaten'];?></td>
+                </tr>
+                <tr>
+                    <td>Kecamatan</td>
+                    <td>:</td>
+                    <td><?= $value['id_kecamatan'];?></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <?php ($value) ?>
+                <tr>
+                    <td colspan="3"><strong>Data Pendidikan :</strong></td>
+                </tr>
+                <tr>
+                    <td width="180">Pendidikan Terakhir</td>
+                    <td width="12">:</td>
+                    <td width="470"><?= $value['pend_akhir'];?></td>
+                </tr>
+                <tr>
+                    <td>Nama Sekolah</td>
+                    <td>:</td>
+                    <td><?= $value['nama_sekolah'];?></td>
+                </tr>
+                <tr>
+                    <td>Rata Nilai Raport</td>
+                    <td>:</td>
+                    <td><?= $value['nilai_raport'];?></td>
+                </tr>
+                <tr>
+                    <td>NISN</td>
+                    <td>:</td>
+                    <td><?= $value['nisn'];?></td>
                 </tr>
             </tbody>
         </table>
