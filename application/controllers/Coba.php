@@ -7,6 +7,6 @@ class Coba extends CI_Controller
 
 	public function index()
 	{
-		echo "Selamat datang";
+		$this->load->view('admin/contohamikomkrs');
 	}
 }

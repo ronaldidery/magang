@@ -19,6 +19,12 @@ class Ppdb_model extends CI_Model {
 		//tanda [] bisa diartikan where dan array
 		$this->db->where('id_pendaftar', $id);
 		$this->db->delete('pendaftar', ['id_pendaftar' => $id]);
-        return true; 
+        return true;
 	}
+
+    public function getDataPendaftaranBy($id)
+    {
+        //tanda [] mengartikan array dan didalamnya ada id. row_array untuk mengambil 1 baris
+        return $this->db->get_where('pendaftar', ['id_pendaftar' => $id])->row_array();
+    }
 } 
