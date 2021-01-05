@@ -38,14 +38,6 @@ class Admin extends CI_Controller {
 		//$data['berita'] = $this->berita_model->getAllBerita($config['per_page'], $data['start']);
 	}
 
-	public function tambah_berita()
-	{
-		$data['judul'] = 'Tambah Berita';
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/berita/tambah');
-		$this->load->view('admin/footer');
-	}
-
 	public function simpan_post()
 	{
 		$config['upload_path'] = './assets/foto/berita/'; //path folder
@@ -95,10 +87,6 @@ class Admin extends CI_Controller {
 	{
 		$data['judul'] = 'Detail Data Berita';
 		$data['berita'] = $this->berita_model->getBeritaById($id);
-
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/berita/detail', $data);
-		$this->load->view('admin/footer');
 	}
 
 }

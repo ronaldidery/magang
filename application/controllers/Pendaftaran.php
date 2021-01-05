@@ -21,4 +21,11 @@ class Pendaftaran extends CI_Controller {
 		$this->session->set_flashdata('flash', 'Ditambahkan');
 		redirect('siswa');
 	}
+
+	public function hapus($id)
+	{
+		$this->berita_model->hapusDataBerita($id);
+		$this->session->set_flashdata('flash', 'Dihapus');
+		redirect('Pendaftaran');
+	}
 }

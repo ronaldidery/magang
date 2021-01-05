@@ -73,7 +73,7 @@
                                         <img src="<?php echo base_url().'assets/foto/event/'.$value['event_image'];?>" width="150">
                                     </td>
                                     <td>
-            <a href="<?= base_url(); ?>event/detail/<?= $value['id_event'];?>" class="btn bg-warning">detail</a>
+            <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['id_event'];?>"> detail</a>
             <a href="#" class="btn bg-success">edit</a>
             <a href="<?= base_url(); ?>event/hapus/<?= $value['id_event'];?>" class="btn bg-danger" onclick="return confirm('event akan dihapus?')" >hapus</a>
                                     </td>
@@ -110,6 +110,36 @@
 </div>
 </div>
 <!-- End Modal -->
+
+<!-- Modal Detail -->
+<?php $no = 0;
+foreach ($event as $value) : $no++ ?>
+
+<div class="modal fade" id="detailModal<?=$value['id_event'];?>"tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Detail event</h4>
+        <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <div class="card mb-3 card-body">
+            <h2><?= $value['jdl_event']; ?></h2>
+            <div class="card-body">
+                <center><img src="<?php echo base_url().'assets/foto/event/'.$value['event_image'];?>"width="700" ></center>
+                <!--<p class="card-text"><?= $value['berita_isi']; ?></p>-->
+                <p class="card-text"><small class="text-muted">Diupload <?= $value['tanggal_event']; ?></small></p>
+            </div>      
+        </div>
+        <div class="modal-footer">
+            <button type="close" data-dismiss="modal" class="btn btn-primary">Close</button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<?php endforeach; ?>
+<!-- End Modal Detail -->
 
 </div>
 <!-- ============================================================== -->

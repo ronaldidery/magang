@@ -133,7 +133,7 @@ foreach ($berita as $value) : $no++ ?>
         <div class="card mb-3 card-body">
             <h2><?= $value['berita_judul']; ?></h2>
             <div class="card-body">
-                <img src="<?php echo base_url().'assets/foto/berita/'.$value['berita_image'];?>" class="card-img">
+                <center><img src="<?php echo base_url().'assets/foto/berita/'.$value['berita_image'];?>" width="700" ></center>
                 <p class="card-text"><?= $value['berita_isi']; ?></p>
                 <p class="card-text"><small class="text-muted">Diupload <?= $value['berita_tanggal']; ?></small></p>
             </div>      

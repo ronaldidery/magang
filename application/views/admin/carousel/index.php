@@ -45,48 +45,48 @@
     }
     ?>
 
-<div class="card">
-              <div class="card-header">
-                <h3 class="card-title">DataTable Carousel</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-
-    <table class="table table-bordered table-striped" id="mydata">
-        <thead>
-            <tr>
-                <th width="20">No</th>
-                <th width="380">Judul</th>
-                <th width="200">Tanggal upload</th>
-                <th width="150">Foto</th>
-                <th width="250">Action</th>
-            </tr>
-        </thead>
-                        <tbody>
-                            <?php $i = 1;
-                            foreach ($carousel as $value) : ?>
-                                <tr>
-                                    <th><?= $i++ ?></th>
-                                    <td><?= $value['jdl_carousel']; ?></td>
-                                    <td><?= $value['tanggal_carousel']; ?></td>
-                                    <td>
-                                        <img src="<?php echo base_url().'assets/foto/carousel/'.$value['carousel_image'];?>" width="150">
-                                    </td>
-                                    <td>
-            <a href="<?= base_url(); ?>carousel/detail/<?= $value['id_carousel'];?>" class="btn bg-warning">detail</a>
-            <a href="#" class="btn bg-success">edit</a>
-            <a href="<?= base_url(); ?>carousel/hapus/<?= $value['id_carousel'];?>" class="btn bg-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?> 
-                </tbody>
-            </table>
-        </div>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">DataTable Carousel</h3>
     </div>
-        </div>
-    </section>
+    <!-- /.card-header -->
+    <div class="card-body">
 
-    <!-- Modal -->
+        <table class="table table-bordered table-striped" id="mydata">
+            <thead>
+                <tr>
+                    <th width="20">No</th>
+                    <th width="380">Judul</th>
+                    <th width="200">Tanggal upload</th>
+                    <th width="150">Foto</th>
+                    <th width="250">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $i = 1;
+                foreach ($carousel as $value) : ?>
+                    <tr>
+                        <th><?= $i++ ?></th>
+                        <td><?= $value['jdl_carousel']; ?></td>
+                        <td><?= $value['tanggal_carousel']; ?></td>
+                        <td>
+                            <img src="<?php echo base_url().'assets/foto/carousel/'.$value['carousel_image'];?>" width="150">
+                        </td>
+                        <td>
+                            <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['id_carousel'];?>"> detail</a>
+                            <a href="#" class="btn bg-success">edit</a>
+                            <a href="<?= base_url(); ?>carousel/hapus/<?= $value['id_carousel'];?>" class="btn bg-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?> 
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
@@ -109,6 +109,36 @@
 </div>
 </div>
 </div>
+<!-- End Modal Tambah -->
+
+<!-- Modal Detail -->
+<?php $no = 0;
+foreach ($carousel as $value) : $no++ ?>
+
+<div class="modal fade" id="detailModal<?=$value['id_carousel'];?>"tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Detail carousel</h4>
+        <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <div class="card mb-3 card-body">
+            <h2><?= $value['jdl_carousel']; ?></h2>
+            <div class="card-body">
+                <center><img src="<?php echo base_url().'assets/foto/carousel/'.$value['carousel_image'];?>" width="700"></center>
+                <p class="card-text"><small class="text-muted">Diupload <?= $value['tanggal_carousel']; ?></small></p>
+            </div>      
+        </div>
+        <div class="modal-footer">
+            <button type="close" data-dismiss="modal" class="btn btn-primary">Close</button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<?php endforeach; ?>
+<!-- End Modal Detail -->
 
 </div>
 <!-- ============================================================== -->

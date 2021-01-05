@@ -70,14 +70,4 @@ class Carousel extends CI_Controller {
 		$this->session->set_flashdata('flash', 'Dihapus');
 		redirect('carousel');
 	} 
-
-	public function detail($id)
-	{
-		$data['judul'] = 'Detail Data Carousel';
-		$data['carousel'] = $this->carousel_model->getCarouselById($id);
-
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/carousel/detail', $data);
-		$this->load->view('admin/footer');
-	}
 }

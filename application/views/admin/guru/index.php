@@ -57,19 +57,19 @@
         </thead>
         <tbody>
             <?php $i = 1;
-            foreach ($guru as $gru) : ?>
+            foreach ($guru as $value) : ?>
                 <tr>
                     <th><?= $i++ ?></th>
-                    <td><?= $gru['nama_guru']; ?></td>
-                    <td><?= $gru['nip'];?></td>
-                    <td><?= $gru['email_guru'];?></td>
+                    <td><?= $value['nama_guru']; ?></td>
+                    <td><?= $value['nip'];?></td>
+                    <td><?= $value['email_guru'];?></td>
                     <td>
-                        <img src="<?php echo base_url().'assets/foto/guru/'.$gru['foto_guru'];?>" width="110">
+                        <img src="<?php echo base_url().'assets/foto/guru/'.$value['foto_guru'];?>" width="110">
                     </td>
                     <td>
-                        <a href="<?= base_url();?>" class="btn bg-warning">detail</a>
+                        <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['id_guru'];?>"> detail</a>
                         <a href="#" class="btn bg-success">edit</a>
-                        <a href="<?= base_url(); ?>guru/hapus/<?= $gru['id_guru'];?>" class="btn bg-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
+                        <a href="<?= base_url(); ?>guru/hapus/<?= $value['id_guru'];?>" class="btn bg-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
                     </td>
                 </tr>
             <?php endforeach; ?> 
@@ -110,6 +110,51 @@
 </div>
 </div>
 <!-- End Modal -->
+
+<!-- Modal Detail -->
+<?php $no = 0;
+foreach ($guru as $value) : $no++ ?>
+
+<div class="modal fade" id="detailModal<?=$value['id_guru'];?>"tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Detail data guru</h4>
+        <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body table-responsive">
+            <div class="modal-content pt-3">
+                <center><img src="<?php echo base_url().'assets/foto/guru/'.$value['foto_guru'];?>"width="200" ></center> <br/>
+                <table class="table table-bordered no-margin">
+                    <tbody>
+                        <tr>
+                            <th style="width:35%">Nama Guru</th>
+                            <td><span><?= $value['nama_guru'];?></span></td>
+                        </tr>
+                        <tr>
+                            <th>NIP</th>
+                            <td><span><?= $value['nip'];?></span></td>
+                        </tr>
+                        <tr>
+                            <th>Email Guru</th>
+                            <td><span><?= $value['email_guru'];?></span></td>
+                        </tr>
+                        <tr>
+                            <th>No Telpon</th>
+                            <td><span><?= $value['no_hp'];?></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        <div class="modal-footer">
+            <button type="close" data-dismiss="modal" class="btn btn-primary">Close</button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<?php endforeach; ?>
+<!-- End Modal Detail -->
 
 </div>
 <!-- ============================================================== -->
