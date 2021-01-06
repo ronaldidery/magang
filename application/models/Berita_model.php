@@ -58,4 +58,24 @@ class Berita_model extends CI_Model{
 		return $this->db->get_where('tbl_berita', ['berita_id' => $id])->row_array();
 	}
 
+	public function updateBeritaFoto($jdl,$berita,$gambar,$id)
+	{
+		$this->db->where('berita_id', $id);
+		$data = array(
+			'berita_judul' => $jdl,
+			'berita_isi' =>  $berita,
+			'berita_image' => $gambar
+		);
+		return $this->db->update('tbl_berita', $data);
+	}
+
+	public function updateBerita($jdl,$berita,$id)
+	{
+		$this->db->where('berita_id', $id);
+		$data = array(
+			'berita_judul' => $jdl,
+			'berita_isi' =>  $berita,
+		);
+		return $this->db->update('tbl_berita', $data);
+	}
 }

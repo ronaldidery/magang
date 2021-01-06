@@ -77,10 +77,9 @@
                             <img src="<?php echo base_url().'assets/foto/berita/'.$value['berita_image'];?>" width="150">
                         </td>
                         <td>
-                            <a href="<?= base_url(); ?>admin/detail/<?= $value['berita_id'];?>" class="btn bg-warning">detail</a>
-                            <a href="#" class="btn bg-success">edit</a>
-                            <a href="<?= base_url(); ?>admin/hapus/<?= $value['berita_id'];?>" class="btn bg-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
                             <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['berita_id'];?>"> detail</a>
+                            <a id="detail" type="button" data-toggle="modal" data-target="#editModal<?= $value['berita_id'];?>" class="btn bg-success">edit</a>
+                            <a href="<?= base_url(); ?>admin/hapus/<?= $value['berita_id'];?>" class="btn bg-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
                         </td>
                     </tr>
                 <?php endforeach; ?> 
@@ -147,6 +146,38 @@ foreach ($berita as $value) : $no++ ?>
 </div>
 <?php endforeach; ?>
 <!-- End Modal Detail -->
+
+<!-- Modal Edit -->
+<?php $no = 0;
+foreach ($berita as $value) : $no++ ?>
+
+<div class="modal fade" id="editModal<?=$value['berita_id'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Form edit berita</h4>
+        <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <form action="<?php echo base_url(); ?>admin/ubah_data/<?php echo $value['berita_id'];?>" method="post" enctype="multipart/form-data">
+            <h5>Judul Berita:</h5>
+            <input value="<?= $value['berita_judul']; ?>" type="text" name="judul" class="form-control" placeholder="Judul berita" required/><br/>
+            <h5>Deskripsi Berita:</h5>
+            <textarea id="ckeditor" name="berita" class="form-control" required><?= $value['berita_isi']; ?></textarea><br/>
+            <h5>Upload Foto</h5>
+            <input type="file" name="filefoto"><br/><br/>
+            <img src="<?php echo base_url().'assets/foto/berita/'.$value['berita_image'];?>" width="100">
+            <div class="modal-footer">
+                <button type="reset" class="btn btn-danger">Reset</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+<?php endforeach; ?>
+<!-- End Modal Edit -->
 
 </div>
 
