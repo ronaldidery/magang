@@ -1,5 +1,5 @@
 <!-- ============================================================== -->
-<!-- Page wrapper  -->
+<!-- Page wrapper -->
 <!-- ============================================================== -->
 <div class="content-wrapper"> 
 
@@ -68,7 +68,7 @@
                     </td>
                     <td>
                         <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['id_guru'];?>"> detail</a>
-                        <a href="#" class="btn bg-success">edit</a>
+                        <a id="detail" type="button" data-toggle="modal" data-target="#editModal<?= $value['id_guru'];?>" class="btn bg-success">edit</a>
                         <a href="<?= base_url(); ?>guru/hapus/<?= $value['id_guru'];?>" class="btn bg-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
                     </td>
                 </tr>
@@ -155,6 +155,42 @@ foreach ($guru as $value) : $no++ ?>
 </div>
 <?php endforeach; ?>
 <!-- End Modal Detail -->
+
+<!-- Modal Edit -->
+<?php $no = 0;
+foreach ($guru as $value) : $no++ ?>
+
+<div class="modal fade" id="editModal<?=$value['id_guru'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Form edit guru</h4>
+        <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <form action="<?php echo base_url(); ?>guru/ubah_data/<?php echo $value['id_guru'];?>" method="post" enctype="multipart/form-data">
+            <h5>Nama Guru:</h5>
+            <input value="<?= $value['nama_guru'];?>" type="text" name="nama" class="form-control" placeholder="Nama guru" required/><br/>
+            <h5>NIP Guru:</h5>
+            <input value="<?= $value['nip'];?>" type="number" name="nip" class="form-control" placeholder="NIP guru" required/><span><br/>
+            <h5>Email Guru:</h5>
+            <input value="<?= $value['email_guru'];?>" type="email" name="email" class="form-control" placeholder="Email guru" required/><br/>
+            <h5>No HP:</h5>
+            <input value="<?= $value['no_hp'];?>" type="text" name="nomor" class="form-control" placeholder="No HP" required/><br/>
+            <h5>Upload Foto</h5>
+            <input type="file" name="filefoto"><br/><br/>
+            <img src="<?php echo base_url().'assets/foto/guru/'.$value['foto_guru'];?>" width="100">
+            <div class="modal-footer">
+                <button type="close" data-dismiss="modal" class="btn btn-danger">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+<?php endforeach; ?>
+<!-- End Modal Edit -->v
 
 </div>
 <!-- ============================================================== -->

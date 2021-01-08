@@ -74,8 +74,8 @@
                         </td>
                         <td>
                             <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['id_carousel'];?>"> detail</a>
-                            <a href="#" class="btn bg-success">edit</a>
-                            <a href="<?= base_url(); ?>carousel/hapus/<?= $value['id_carousel'];?>" class="btn bg-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
+                            <a id="detail" type="button" data-toggle="modal" data-target="#editModal<?= $value['id_carousel'];?>" class="btn bg-success">edit</a>
+                            <a href="<?= base_url(); ?>carousel/hapus/<?= $value['id_carousel'];?>" class="btn bg-danger" onclick="return confirm('carousel akan dihapus?')" >hapus</a>
                         </td>
                     </tr>
                 <?php endforeach; ?> 
@@ -84,8 +84,8 @@
     </div>
 </div>
 </div>
-</section>
-
+</section> 
+ 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
@@ -139,6 +139,36 @@ foreach ($carousel as $value) : $no++ ?>
 </div>
 <?php endforeach; ?>
 <!-- End Modal Detail -->
+
+<!-- Modal Edit -->
+<?php $no = 0;
+foreach ($carousel as $value) : $no++ ?>
+
+<div class="modal fade" id="editModal<?=$value['id_carousel'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Form edit carousel</h4>
+        <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <form action="<?php echo base_url(); ?>carousel/ubah_data/<?php echo $value['id_carousel'];?>" method="post" enctype="multipart/form-data">
+            <h5>Judul Carousel:</h5>
+            <input value="<?= $value['jdl_carousel']; ?>" type="text" name="judul" class="form-control" placeholder="Judul carousel" required/><br/>
+            <h5>Upload Foto</h5>
+            <input type="file" name="filefoto"><br/><br/>
+            <img src="<?php echo base_url().'assets/foto/carousel/'.$value['carousel_image'];?>" width="100">
+            <div class="modal-footer">
+                <button type="close" data-dismiss="modal" class="btn btn-primary">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+<?php endforeach; ?>
+<!-- End Modal Edit -->
 
 </div>
 <!-- ============================================================== -->

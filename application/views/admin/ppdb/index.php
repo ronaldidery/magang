@@ -85,7 +85,7 @@
                                     <td><?= $value['no_tlp']; ?></td>
                                     <td>
             <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['id_pendaftar'];?>"> detail</a>
-            <a href="<?= base_url(); ?>ppdb/print_data_pendaftar/<?= $value['id_pendaftar'];?>" class="btn bg-success"><i class="fas fa-download"></i></a>
+            <a href="<?= base_url(); ?>ppdb/print_data_pendaftar/<?= $value['id_pendaftar'];?>" class="btn bg-success"><i class="fas fa-print"></i></a>
             <a href="<?= base_url(); ?>ppdb/hapus/<?= $value['id_pendaftar'];?>" class="btn bg-danger" onclick="return confirm('Yakin akan dihapus?')" >hapus</a>
                                     </td>
                                 </tr>
@@ -97,7 +97,7 @@
         </div>
     </section>
 
-    <!-- Modal Detail -->
+<!-- Modal Detail -->
 <?php $no = 0;
 foreach ($pendaftaran as $value) : $no++ ?>
 

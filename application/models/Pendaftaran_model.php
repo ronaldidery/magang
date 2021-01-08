@@ -6,6 +6,8 @@ class Pendaftaran_model extends CI_Model {
 	//insert data pendaftaran
 	public function tambahDataPendaftaran()
 	{
+		$row = $this->
+
 		$data = array(
 			"nama" => $this->input->post('nama', true),
 			"nik" => $this->input->post('nik', true),

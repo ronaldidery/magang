@@ -1,7 +1,7 @@
 <!-- ============================================================== -->
-<!-- Page wrapper  --> 
+<!-- Page wrapper --> 
 <!-- ============================================================== -->
-<div class="content-wrapper"> 
+<div class="content-wrapper">
 
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
@@ -74,8 +74,8 @@
                                     </td>
                                     <td>
             <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['id_galeri'];?>"> detail</a>
-            <a href="#" class="btn bg-success">edit</a>
-            <a href="<?= base_url(); ?>galeri/hapus/<?= $value['id_galeri'];?>" class="btn bg-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
+            <a id="detail" type="button" data-toggle="modal" data-target="#editModal<?= $value['id_galeri'];?>" class="btn bg-success">edit</a>
+            <a href="<?= base_url(); ?>galeri/hapus/<?= $value['id_galeri'];?>" class="btn bg-danger" onclick="return confirm('carousel akan dihapus?')" >hapus</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?> 
@@ -140,6 +140,36 @@ foreach ($galeri as $value) : $no++ ?>
 </div>
 <?php endforeach; ?>
 <!-- End Modal Detail -->
+
+<!-- Modal Edit -->
+<?php $no = 0;
+foreach ($galeri as $value) : $no++ ?>
+
+<div class="modal fade" id="editModal<?=$value['id_galeri'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Form edit galeri</h4>
+        <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <form action="<?php echo base_url(); ?>galeri/ubah_data/<?php echo $value['id_galeri'];?>" method="post" enctype="multipart/form-data">
+            <h5>Judul Galeri:</h5>
+            <input value="<?= $value['judul_galeri']; ?>" type="text" name="judul" class="form-control" placeholder="Judul galeri" required/><br/>
+            <h5>Upload Foto</h5>
+            <input type="file" name="filefoto"><br/><br/>
+            <img src="<?php echo base_url().'assets/foto/galeri/'.$value['foto_galeri'];?>" width="100">
+            <div class="modal-footer">
+                <button type="close" data-dismiss="modal" class="btn btn-danger">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+<?php endforeach; ?>
+<!-- End Modal Edit -->
 
 </div>
 <!-- ============================================================== -->

@@ -1,7 +1,7 @@
 <?php 
 class Carousel_model extends CI_Model{ 
  
-	function simpan_carousel($jdl,$gambar)
+	function simpan_carousel($jdl,$gambar) 
 	{
 		$data = array(
 			'jdl_carousel' => $jdl,
@@ -38,5 +38,24 @@ class Carousel_model extends CI_Model{
 	{
 		//tanda [] mengartikan array dan didalamnya ada id. row_array untuk mengambil 1 baris
 		return $this->db->get_where('tbl_carousel', ['id_carousel' => $id])->row_array();
+	}
+
+	public function updateCarouselFoto($jdl,$gambar,$id)
+	{
+		$this->db->where('id_carousel', $id);
+		$data = array(
+			'jdl_carousel' => $jdl,
+			'carousel_image' =>  $gambar
+		);
+		return $this->db->update('tbl_carousel', $data);
+	}
+
+	public function updateCarousel($jdl,$id)
+	{
+		$this->db->where('id_carousel', $id);
+		$data = array(
+			'jdl_carousel' => $jdl
+		);
+		return $this->db->update('tbl_carousel', $data);
 	}
 }

@@ -5,7 +5,7 @@ class Admin extends CI_Controller {
 
 	public function __construct()
 	{
-		parent::__construct();
+		parent::__construct(); 
 		$this->load->model('berita_model');
         $this->load->library('upload');
 	}

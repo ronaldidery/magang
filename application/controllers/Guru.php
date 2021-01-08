@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
- 
+
 class Guru extends CI_Controller { 
 
 	public function __construct()
@@ -56,13 +56,14 @@ class Guru extends CI_Controller {
                 $nomor = $this->input->post('nomor', TRUE);
 
 				$this->guru_model->simpan_guru($nama,$nip,$email,$nomor,$gambar);
+				$this->session->set_flashdata('flash', 'Ditambahkan');
 				redirect('guru');
 		}else{
-			redirect('admin/tambah_guru');
+			redirect('guru');
 	    } 
 	                 
 	    }else{
-			redirect('admin/tambah_guru');
+			redirect('guru');
 		}		
 	}
 
@@ -71,5 +72,56 @@ class Guru extends CI_Controller {
 		$this->guru_model->hapusDataGuru($id);
 		$this->session->set_flashdata('flash', 'Dihapus');
 		redirect('guru');
-	} 
+	}
+
+	public function ubah_data($id)
+	{
+		$config['upload_path'] = './assets/foto/guru/'; //path folder
+	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+	    $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+
+	    $this->upload->initialize($config);
+	    if(!empty($_FILES['filefoto']['name'])){
+	        if ($this->upload->do_upload('filefoto')){
+
+	        	//Unlink atau hapus Gambar yang sebelumnya
+	        	$row = $this->db->where('id_guru',$id)->get('tbl_guru')->row();
+        		unlink('assets/foto/guru/'.$row->foto_guru);
+
+	        	$gbr = $this->upload->data();
+	            //Compress Image
+	            $config['image_library']='gd2';
+	            $config['source_image']='./assets/foto/guru/'.$gbr['file_name'];
+	            $config['create_thumb']= FALSE;
+	            $config['maintain_ratio']= FALSE;
+	            $config['quality']= '60%';
+	            $config['width']= 400;
+	            $config['height']= 400;
+	            $config['new_image']= './assets/foto/guru/'.$gbr['file_name'];
+	            $this->load->library('image_lib', $config);
+	            $this->image_lib->resize();
+
+	            $gambar=$gbr['file_name'];
+                $nama = $this->input->post('nama', TRUE);
+                $nip = $this->input->post('nip', TRUE);
+                $email = $this->input->post('email', TRUE);
+                $nomor = $this->input->post('nomor', TRUE);
+
+				$this->guru_model->updateGuruFoto($nama,$nip,$email,$nomor,$gambar,$id);
+				$this->session->set_flashdata('flash', 'Diubah');
+				redirect('guru');
+			}else{
+				redirect('guru');
+	    	}             
+	    }else{
+			$nama = $this->input->post('nama', TRUE);
+            $nip = $this->input->post('nip', TRUE);
+            $email = $this->input->post('email', TRUE);
+            $nomor = $this->input->post('nomor', TRUE);
+
+			$this->guru_model->updateGuru($nama,$nip,$email,$nomor,$id);
+			$this->session->set_flashdata('flash', 'Diubah');
+			redirect('guru');
+		}		
+	}
 }

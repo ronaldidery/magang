@@ -62,7 +62,7 @@ class Berita_model extends CI_Model{
 	{
 		$this->db->where('berita_id', $id);
 		$data = array(
-			'berita_judul' => $jdl,
+			'berita_judul' => $jdl, 
 			'berita_isi' =>  $berita,
 			'berita_image' => $gambar
 		);

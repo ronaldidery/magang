@@ -35,4 +35,29 @@ class Guru_model extends CI_Model{
 		//tanda [] mengartikan array dan didalamnya ada id. row_array untuk mengambil 1 baris
 		return $this->db->get_where('tbl_guru', ['id_guru' => $id])->row_array();
 	}
+
+	public function updateGuruFoto($nama,$nip,$email,$nomor,$gambar,$id)
+	{
+		$this->db->where('id_guru', $id);
+		$data = array(
+			'nama_guru' => $nama,
+			'nip' =>  $nip,
+			'email_guru' => $email,
+			'no_hp' => $nomor,
+			'foto_guru' => $gambar
+		);
+		return $this->db->update('tbl_guru', $data);
+	}
+
+	public function updateGuru($nama,$nip,$email,$nomor,$id)
+	{
+		$this->db->where('id_guru', $id);
+		$data = array(
+			'nama_guru' => $nama,
+			'nip' =>  $nip,
+			'email_guru' => $email,
+			'no_hp' => $nomor
+		);
+		return $this->db->update('tbl_guru', $data);
+	}
 }

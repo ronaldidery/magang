@@ -1,9 +1,9 @@
 <?php 
 class Galeri_model extends CI_Model{
- 
+
 	function simpan_galeri($jdl,$gambar)
 	{
-		$data = array(
+		$data = array( 
 			'judul_galeri' => $jdl,
 			'foto_galeri' =>  $gambar
 		);
@@ -39,5 +39,24 @@ class Galeri_model extends CI_Model{
 	{
 		//tanda [] mengartikan array dan didalamnya ada id. row_array untuk mengambil 1 baris
 		return $this->db->get_where('tbl_galeri', ['id_galeri' => $id])->row_array();
+	}
+
+	public function updateGaleriFoto($jdl,$gambar,$id)
+	{
+		$this->db->where('id_galeri', $id);
+		$data = array(
+			'judul_galeri' => $jdl,
+			'foto_galeri' =>  $gambar
+		);
+		return $this->db->update('tbl_galeri', $data);
+	}
+
+	public function updateGaleri($jdl,$id)
+	{
+		$this->db->where('id_galeri', $id);
+		$data = array(
+			'judul_galeri' => $jdl
+		);
+		return $this->db->update('tbl_galeri', $data);
 	}
 }

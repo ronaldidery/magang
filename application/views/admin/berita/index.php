@@ -12,7 +12,7 @@
             <div class="col-sm-6">
                 <b><h1 class="page-title"><?php echo $judul; ?></h1></b>
             </div><!-- /.col -->
-        </div><!-- /.row -->
+        </div><!-- /.row --> 
     </div><!-- /.container-fluid -->
 </div>
 <!-- ============================================================== -->
@@ -24,11 +24,6 @@
 <section class="content">
     <div class="container-fluid">
         <div class="breadcrumb">
-            <div class="card-footer clearfix">
-                <a href="<?= base_url('admin/tambah_berita') ?>">
-                    <button type="button" class="btn bg-success float-right"><i class="fas fa-plus"></i> Tambah Berita</button>
-                </a>
-            </div>
             <div class="card-footer clearfix">
                 <button type="button" class="btn bg-success float-right" data-toggle="modal" data-target="#tambahModal"><i class="fas fa-plus"></i> Tambah Berita</button>
             </div>

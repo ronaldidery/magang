@@ -123,6 +123,7 @@
                   </p>
                 </a>
               </li>
+    <p>Interface</p>
               <li class="nav-item">
                 <a href="<?= base_url('admin'); ?>" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
@@ -229,11 +230,12 @@
                   </li>
                 </ul>
               </li>
+    <p>Data Nilai Siswa</p>
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-table"></i>
                   <p>
-                    Nilai Siswa
+                    Nilai Siswa 7
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
@@ -241,24 +243,99 @@
                   <li class="nav-item">
                     <a href="<?php echo base_url();?>kls7" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Kelas VII</p>
+                      <p>PTS 1</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="<?php echo base_url();?>kls8" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Kelas VIII</p>
+                      <p>PAS</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="<?php echo base_url();?>kls9" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Kelas IX</p>
+                      <p>PTS 2</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?php echo base_url();?>kls9" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>PAS</p>
                     </a>
                   </li>
                 </ul>
               </li>
-              
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-table"></i>
+                  <p>
+                    Nilai Siswa 8
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?php echo base_url();?>kls7" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>PTS 1</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?php echo base_url();?>kls8" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>PAS</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?php echo base_url();?>kls9" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>PTS 2</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?php echo base_url();?>kls9" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>PAS</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-table"></i>
+                  <p>
+                    Nilai Siswa 9
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?php echo base_url();?>kls7" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>PTS 1</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?php echo base_url();?>kls8" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>PAS</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?php echo base_url();?>kls9" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>PTS 2</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?php echo base_url();?>kls9" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>PAS</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="fas fa-users mr-2"></i>
@@ -267,6 +344,9 @@
                   </p>
                 </a>
               </li>
+              <br>
+              <br>
+              <br>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
