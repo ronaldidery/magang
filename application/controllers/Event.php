@@ -1,7 +1,7 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class Event extends CI_Controller {
+class Event extends CI_Controller { 
 
 	public function __construct()
 	{
@@ -51,16 +51,17 @@ class Event extends CI_Controller {
 
 	            $gambar=$gbr['file_name'];
                 $jdl=$this->input->post('judul', TRUE);
+                $desk=$this->input->post('deskripsi', TRUE);
 
-				$this->event_model->simpan_event($jdl,$gambar);
+				$this->event_model->simpan_event($jdl,$desk,$gambar);
 				$this->session->set_flashdata('flash', 'Ditambahkan');
 				redirect('event');
 		}else{
-			redirect('event/tambah');
+			redirect('event');
 	    } 
 	                 
 	    }else{
-			redirect('event/tambah');
+			redirect('event');
 		}		
 	}
 
@@ -79,5 +80,52 @@ class Event extends CI_Controller {
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/event/detail', $data);
 		$this->load->view('admin/footer');
+	}
+
+	public function ubah_data($id)
+	{
+		$config['upload_path'] = './assets/foto/event/'; //path folder
+	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+	    $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+
+	    $this->upload->initialize($config);
+	    if(!empty($_FILES['filefoto']['name'])){
+	        if ($this->upload->do_upload('filefoto')){
+
+	        	//Unlink atau hapus Gambar yang sebelumnya
+	        	$row = $this->db->where('berita_id',$id)->get('tbl_berita')->row();
+        		unlink('assets/foto/event/'.$row->berita_image);
+
+	        	$gbr = $this->upload->data();
+	            //Compress Image
+	            $config['image_library'] = 'gd2';
+	            $config['source_image'] = './assets/foto/event/'.$gbr['file_name'];
+	            $config['create_thumb'] = FALSE;
+	            $config['maintain_ratio'] = FALSE;
+	            $config['quality'] = '60%';
+	            $config['width'] = 710;
+	            $config['height'] = 420;
+	            $config['new_image'] = './assets/foto/event/'.$gbr['file_name'];
+	            $this->load->library('image_lib', $config);
+	            $this->image_lib->resize();
+
+	            $gambar=$gbr['file_name'];
+                $jdl=$this->input->post('judul', TRUE);
+                $desk=$this->input->post('deskripsi', TRUE);
+
+				$this->event_model->updateEventFoto($jdl,$desk,$gambar,$id);
+				$this->session->set_flashdata('flash', 'Diubah');
+				redirect('event');
+			}else{
+				redirect('event');
+	    	}             
+	    }else{
+			$jdl=$this->input->post('judul', TRUE);
+            $desk=$this->input->post('deskripsi', TRUE);
+
+            $this->event_model->updateEvent($jdl,$desk,$id);
+			$this->session->set_flashdata('flash', 'Diubah');
+			redirect('event');
+		}		
 	}
 }

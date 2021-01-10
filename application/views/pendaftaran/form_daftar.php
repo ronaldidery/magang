@@ -207,7 +207,37 @@
     </div>
   </div>
 </div>
-
+<div class="alert alert-primary">
+  <strong>Lampiran</strong>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label><h4>PAS FOTO:</h4></label>
+      <p>#pas foto</p>
+      <input type="file" name="pasfoto" class="form-control" placeholder="Masukan Foto" required>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label><h4>KARTU KELUARGA:</h4></label>
+      <p>#scan berupa foto menggunakan aplikasi android</p>
+      <input type="file" name="fotokk" class="form-control" placeholder="Masukan Foto" required>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label><h4>IJAZAH:</h4></label>
+      <p>#scan berupa foto menggunakan aplikasi android</p>
+      <input type="file" name="fotoijazah" class="form-control" placeholder="Masukan Foto" required>
+    </div>
+  </div>
+</div>
+<br>
 <div class="row">
   <div class="col-sm-6">
     <button type="submit" name="Submit" id="Submit" class="btn btn-primary">Daftar</button>

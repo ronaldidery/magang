@@ -37,7 +37,7 @@ class Admin extends CI_Controller {
 		//$data['start'] = $this->uri->segment(3);
 		//$data['berita'] = $this->berita_model->getAllBerita($config['per_page'], $data['start']);
 	}
-
+ 
 	public function simpan_post()
 	{
 		$config['upload_path'] = './assets/foto/berita/'; //path folder
@@ -59,20 +59,19 @@ class Admin extends CI_Controller {
 	            $config['new_image']= './assets/foto/berita/'.$gbr['file_name'];
 	            $this->load->library('image_lib', $config);
 	            $this->image_lib->resize();
-
-	            $gambar=$gbr['file_name'];
-                $jdl=$this->input->post('judul', TRUE);
-                $berita=$this->input->post('berita', TRUE);
-
-				$this->berita_model->simpan_berita($jdl,$berita,$gambar);
-				$this->session->set_flashdata('flash', 'Ditambahkan');
-				redirect('admin');
 			}else{
 				redirect('admin');
 	    	}           
 	    }else{
 			redirect('admin');
-		}		
+		}
+	    		$gambar=$gbr['file_name'];
+                $jdl=$this->input->post('judul', TRUE);
+                $berita=$this->input->post('berita', TRUE);
+
+				$this->berita_model->simpan_berita($jdl,$berita,$gambar);
+				$this->session->set_flashdata('flash', 'Ditambahkan');
+				redirect('admin');		
 	}
 
 	public function hapus($id)
@@ -104,14 +103,14 @@ class Admin extends CI_Controller {
 
 	        	$gbr = $this->upload->data();
 	            //Compress Image
-	            $config['image_library']='gd2';
-	            $config['source_image']='./assets/foto/berita/'.$gbr['file_name'];
-	            $config['create_thumb']= FALSE;
-	            $config['maintain_ratio']= FALSE;
-	            $config['quality']= '60%';
-	            $config['width']= 710;
-	            $config['height']= 420;
-	            $config['new_image']= './assets/foto/berita/'.$gbr['file_name'];
+	            $config['image_library'] = 'gd2';
+	            $config['source_image'] = './assets/foto/berita/'.$gbr['file_name'];
+	            $config['create_thumb'] = FALSE;
+	            $config['maintain_ratio'] = FALSE;
+	            $config['quality'] = '60%';
+	            $config['width'] = 710;
+	            $config['height'] = 420;
+	            $config['new_image'] = './assets/foto/berita/'.$gbr['file_name'];
 	            $this->load->library('image_lib', $config);
 	            $this->image_lib->resize();
 

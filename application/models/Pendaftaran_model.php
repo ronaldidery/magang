@@ -2,12 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pendaftaran_model extends CI_Model {
-
+ 
 	//insert data pendaftaran
 	public function tambahDataPendaftaran()
 	{
-		$row = $this->
-
 		$data = array(
 			"nama" => $this->input->post('nama', true),
 			"nik" => $this->input->post('nik', true),
@@ -31,6 +29,16 @@ class Pendaftaran_model extends CI_Model {
 		);
 
 		return $this->db->INSERT('pendaftar', $data);
+	}
+
+	public function simpan_post()
+	{
+		$config['upload_path'] = './assets/foto/ppdb/'; //path folder
+	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+	    $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+
+	    $data['userfile'] = $fileData['file_name'];
+	    		
 	}
 
 	//Fungsi untuk menampilkan alamat(provinsi,kabuoaten,kecamatan) menggunakan ajax
