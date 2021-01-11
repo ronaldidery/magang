@@ -13,7 +13,7 @@
 <?php endif; ?>
 
 <div class="container p-3 my-3 border">
- <form id="form" method="post" action="<?= base_url('form'); ?>">
+ <form id="form" method="post" action="<?= base_url('form'); ?>" enctype="multipart/form-data">
 
   <?php if( validation_errors() ): ?>
     <div class="alert alert-danger" role="alert">
@@ -215,16 +215,7 @@
     <div class="form-group">
       <label><h4>PAS FOTO:</h4></label>
       <p>#pas foto</p>
-      <input type="file" name="pasfoto" class="form-control" placeholder="Masukan Foto" required>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-4">
-    <div class="form-group">
-      <label><h4>KARTU KELUARGA:</h4></label>
-      <p>#scan berupa foto menggunakan aplikasi android</p>
-      <input type="file" name="fotokk" class="form-control" placeholder="Masukan Foto" required>
+      <input type="file" name="pasfoto" class="form-control" required>
     </div>
   </div>
 </div>
@@ -233,7 +224,16 @@
     <div class="form-group">
       <label><h4>IJAZAH:</h4></label>
       <p>#scan berupa foto menggunakan aplikasi android</p>
-      <input type="file" name="fotoijazah" class="form-control" placeholder="Masukan Foto" required>
+      <input type="file" name="fotoijazah" class="form-control" required>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label><h4>KARTU KELUARGA:</h4></label>
+      <p>#scan berupa foto menggunakan aplikasi android</p>
+      <input type="file" name="fotokk" class="form-control" required>
     </div>
   </div>
 </div>

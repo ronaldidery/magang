@@ -66,12 +66,12 @@
             <table class="table table-bordered table-striped" id="mydata">
                 <thead>
                     <tr>
-                        <th width="20">No</th>
-                        <th width="330">Nama</th>
-                        <th width="130">NISN</th>
-                        <th width="150">NIK</th>
-                        <th width="150">No HP</th>
-                        <th width="220">Action</th>
+                        <th width="10">No</th>
+                        <th width="250">Nama</th>
+                        <th width="110">NISN</th>
+                        <th width="120">NIK</th>
+                        <th width="110">No HP</th>
+                        <th width="400">Action</th>
                     </tr>
                 </thead>
                         <tbody>
@@ -86,6 +86,8 @@
                                     <td>
             <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['id_pendaftar'];?>"> detail</a>
             <a href="<?= base_url(); ?>ppdb/print_data_pendaftar/<?= $value['id_pendaftar'];?>" class="btn bg-success"><i class="fas fa-print"></i></a>
+            <a href="" class="btn bg-success"><i class="fas fa-image"></i></a>
+            <a href="" class="btn bg-success"><i class="fas fa-book"></i></a>
             <a href="<?= base_url(); ?>ppdb/hapus/<?= $value['id_pendaftar'];?>" class="btn bg-danger" onclick="return confirm('Yakin akan dihapus?')" >hapus</a>
                                     </td>
                                 </tr>

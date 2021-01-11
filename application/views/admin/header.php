@@ -241,25 +241,25 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?php echo base_url();?>kls7" class="nav-link">
+                    <a href="<?= base_url('kelas7/pts1'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 1</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?php echo base_url();?>kls8" class="nav-link">
+                    <a href="<?= base_url('kelas7/pat'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PAS</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?php echo base_url();?>kls9" class="nav-link">
+                    <a href="<?= base_url('kelas7/pts2'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 2</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?php echo base_url();?>kls9" class="nav-link">
+                    <a href="<?= base_url('kelas7/pas'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PAS</p>
                     </a>
@@ -276,25 +276,25 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?php echo base_url();?>kls7" class="nav-link">
+                    <a href="<?= base_url('kelas8/pts1'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 1</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?php echo base_url();?>kls8" class="nav-link">
+                    <a href="<?= base_url('kelas8/pat'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PAS</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?php echo base_url();?>kls9" class="nav-link">
+                    <a href="<?= base_url('kelas8/pts2'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 2</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?php echo base_url();?>kls9" class="nav-link">
+                    <a href="<?= base_url('kelas8/pas'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PAS</p>
                     </a>
@@ -311,25 +311,25 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?php echo base_url();?>kls7" class="nav-link">
+                    <a href="<?= base_url('kelas9/pts1'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 1</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?php echo base_url();?>kls8" class="nav-link">
+                    <a href="<?= base_url('kelas9/pat'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PAS</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?php echo base_url();?>kls9" class="nav-link">
+                    <a href="<?= base_url('kelas9/pts2'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 2</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?php echo base_url();?>kls9" class="nav-link">
+                    <a href="<?= base_url('kelas9/pas'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PAS</p>
                     </a>

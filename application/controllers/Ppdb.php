@@ -30,7 +30,7 @@ class Ppdb extends CI_Controller {
     {
         $data['pendaftaran'] = $this->ppdb_model->getAllDataPendaftaran("pendaftar");
         $this->load->view('admin/ppdb/print_pendaftaran', $data);
-    }
+    } 
 
     public function print_data_pendaftar($id)
     {
