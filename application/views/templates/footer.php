@@ -115,7 +115,7 @@
                     var i;
 
                     for(i=0; i<data.length; i++){
-                        html += '<option value='+data[i].id+'>'+data[i].nama+'</option>';
+                        html += '<option value='+data[i].id+'>'+data[i].nama_kab+'</option>';
                     }
                     $('#kabupaten').html(html);
 
@@ -140,7 +140,7 @@
                     var i;
 
                     for(i=0; i<data.length; i++){
-                        html += '<option value='+data[i].id+'>'+data[i].nama+'</option>';
+                        html += '<option value='+data[i].id+'>'+data[i].nama_kec+'</option>';
                     }
                     $('#kecamatan').html(html);
 

@@ -78,7 +78,7 @@
       </select>
     </div>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-3"> 
     <div class="form-group">
       <label><h4>Agama:</h4></label>
       <select class="form-control" name="agama">
@@ -135,7 +135,6 @@
   </div>
 </div>
  
-
 <div class="row">
   <div class="col-sm-4">
     <div class="form-group">
@@ -143,7 +142,7 @@
       <select class="form-control" name="provinsi" id="provinsi">
         <option value="0">-PILIH PROVINSI-</option>
        <?php foreach($data->result() as $row):?>
-          <option value="<?php echo $row->id;?>"><?php echo $row->nama;?></option>
+          <option value="<?php echo $row->id;?>"><?php echo $row->nama_prov;?></option>
         <?php endforeach;?>
       </select>
     </div>

@@ -62,7 +62,7 @@
             <h3 class="card-title">Data Pendaftaran</h3>
         </div>
         <!-- /.card-header -->
-        <div class="card-body">
+        <div class="card-body"> 
             <table class="table table-bordered table-striped" id="mydata">
                 <thead>
                     <tr>
@@ -171,15 +171,15 @@ foreach ($pendaftaran as $value) : $no++ ?>
                         </tr>
                         <tr>
                             <th>Provinsi</th>
-                            <td><span><?= $value['id_provinsi'];?></span></td>
+                            <td><span><?= $value['nama_prov'];?></span></td>
                         </tr>
                         <tr>
                             <th>Kabupaten</th>
-                            <td><span><?= $value['id_kabupaten'];?></span></td>
+                            <td><span><?= $value['nama_kab'];?></span></td>
                         </tr>
                         <tr>
                             <th>Kecamatan</th>
-                            <td><span><?= $value['id_kecamatan'];?></span></td>
+                            <td><span><?= $value['nama_kec'];?></span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -201,6 +201,23 @@ foreach ($pendaftaran as $value) : $no++ ?>
                         <tr>
                             <th>NISN</th>
                             <td><span><?= $value['nisn'];?></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-bordered no-margin">
+                    <h4 class="ml-2">Lampiran :</h4>
+                    <tbody>
+                        <tr>
+                            <th style="width:35%">Pas Foto</th>
+                            <td><span><img src="<?php echo base_url().'assets/foto/document/'.$value['pas_foto'];?>"width="100" ></span></td>
+                        </tr>
+                        <tr>
+                            <th>Ijazah</th>
+                            <td><span><img src="<?php echo base_url().'assets/foto/document/'.$value['ijazah_foto'];?>"width="50" ></span></td>
+                        </tr>
+                        <tr>
+                            <th>Kartu Keluarga</th>
+                            <td><span><img src="<?php echo base_url().'assets/foto/document/'.$value['kk_foto'];?>"width="50" ></span></td>
                         </tr>
                     </tbody>
                 </table>

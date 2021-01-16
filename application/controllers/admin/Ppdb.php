@@ -19,7 +19,7 @@ class Ppdb extends CI_Controller {
         $this->load->view('admin/footer');
     }
 
-    public function hapus($id)
+    public function hapus($id) 
     {
         $this->ppdb_model->hapusDataPPDB($id);
         $this->session->set_flashdata('flash', 'Dihapus');

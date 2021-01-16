@@ -55,7 +55,7 @@
             clear: both;
         }
 
-    </style>
+    </style> 
     <script type="text/javascript" src="chrome-extension://aadgmnobpdmgmigaicncghmmoeflnamj/ng-inspector.js"></script>
 </head>
 <body cz-shortcut-listen="true">
@@ -148,17 +148,17 @@
                 <tr>
                     <td>Provinsi</td>
                     <td>:</td>
-                    <td><?= $value['id_provinsi'];?></td>
+                    <td><?= $value['nama_prov'];?></td>
                 </tr>
                 <tr>
                     <td>Kabupaten</td>
                     <td>:</td>
-                    <td><?= $value['id_kabupaten'];?></td>
+                    <td><?= $value['nama_kab'];?></td>
                 </tr>
                 <tr>
                     <td>Kecamatan</td>
                     <td>:</td>
-                    <td><?= $value['id_kecamatan'];?></td>
+                    <td><?= $value['nama_kec'];?></td>
                 </tr>
             </tbody>
             <tbody>
@@ -190,11 +190,12 @@
         </table>
         <br> 
         <div class="line"></div>
+        <br>
         <table width="100%" border="0">
             <tbody>
                 <tr>
                     <td align="center">
-                        <img src="http://amikom.ac.id/public/fotomhs/2018/18_02_0287.jpg" alt="MUHAMMAD FARRIJ RIFAI" width="150" style="border:2px outset #777777;"> </td>
+                        <img src="<?php echo base_url().'assets/foto/document/'.$value['pas_foto'];?>"width="150" alt="<?= $value['nama'];?>" width="150" style="border:2px outset #777777;"> </td>
                 </tr>
             </tbody>
         </table>

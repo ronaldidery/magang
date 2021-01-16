@@ -57,9 +57,9 @@ class Form extends CI_Controller {
 
 	private function _simpan()
 	{
-		$data = array();
+		//$data = array();
 	    $config['upload_path'] = './assets/foto/document/'; //path folder
-		$config['allowed_types'] = 'jpg|png|jpeg'; //type yang dapat diakses bisa anda sesuaikan
+		$config['allowed_types'] = 'jpg|png|jpeg'; //type yang dapat diakses bisa anda sesuaikan 
 	    $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
 	   	if(!empty($_FILES['pasfoto']['name'])){
@@ -76,7 +76,7 @@ class Form extends CI_Controller {
 	            $this->image_lib->resize();
 			}           
 	    }else{
-			redirect('galeri');
+			redirect('form');
 		}
 
 		if(!empty($_FILES['fotoijazah']['name'])){
@@ -93,7 +93,7 @@ class Form extends CI_Controller {
 	            $this->image_lib->resize();
 			}           
 	    }else{
-			redirect('admin');
+			redirect('form');
 		}
 
 		if(!empty($_FILES['fotokk']['name'])){
@@ -110,7 +110,7 @@ class Form extends CI_Controller {
 	            $this->image_lib->resize();
 			}           
 	    }else{
-			redirect('admin');
+			redirect('form');
 		}
 
 		$nama = $this->input->post('nama', true);
