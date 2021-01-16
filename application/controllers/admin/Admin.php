@@ -17,7 +17,7 @@ class Admin extends CI_Controller
 		//$data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
 
 
-		$data['judul'] = 'List Data Berita';
+		$data['judul'] = 'List Data Berita'; 
 		$data['berita'] = $this->berita_model->getAllBerita();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/berita/index', $data);
@@ -61,7 +61,7 @@ class Admin extends CI_Controller
 	            $this->load->library('image_lib', $config);
 	            $this->image_lib->resize();
 			}else{
-				redirect('admin');
+				redirect('admin/admin');
 	    	}           
 	    }else{
 			redirect('admin');
@@ -72,14 +72,14 @@ class Admin extends CI_Controller
 
 				$this->berita_model->simpan_berita($jdl,$berita,$gambar);
 				$this->session->set_flashdata('flash', 'Ditambahkan');
-				redirect('admin');		
+				redirect('admin/admin');		
 	}
 
 	public function hapus($id)
 	{
 		$this->berita_model->hapusDataBerita($id);
 		$this->session->set_flashdata('flash', 'Dihapus');
-		redirect('admin');
+		redirect('admin/admin');
 	} 
 
 	public function detail($id)
@@ -131,7 +131,7 @@ class Admin extends CI_Controller
 
             $this->berita_model->updateBerita($jdl,$berita,$id);
 			$this->session->set_flashdata('flash', 'Diubah');
-			redirect('admin');
+			redirect('admin/admin');
 		}		
 	}
 

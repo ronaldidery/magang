@@ -1,8 +1,8 @@
-<?php 
+<?php  
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class Kelas9 extends CI_Controller
-{
+class Kelas7 extends CI_Controller 
+{ 
 	public function __construct()
 	{
 		parent::__construct(); 
@@ -41,12 +41,12 @@ class Kelas9 extends CI_Controller
 			'tik' => $tik
 		);
 
-        $this->nilai_model->simpanpts9($data);
+        $this->nilai_model->simpanpts7($data);
 		$this->session->set_flashdata('flash', 'Ditambahkan');
 		if ($kategori == 'PTS1') {
-			redirect('kelas9/pts1');
+			redirect('admin/kelas7/pts1');
 		} else {
-			redirect('kelas9/pts2');
+			redirect('admin/kelas7/pts2');
 		}
 	}
 
@@ -82,56 +82,58 @@ class Kelas9 extends CI_Controller
 			'tik' => $tik
 		);
 
-        $this->nilai_model->simpanpts9edit($data,$id);
+        $this->nilai_model->simpanpts7edit($data,$id);
 		$this->session->set_flashdata('flash', 'Diubah');
 		if ($kategori == 'PTS1') {
-			redirect('kelas9/pts1');
+			redirect('admin/kelas7/pts1');
 		} else {
-			redirect('kelas9/pts2');
+			redirect('admin/kelas7/pts2');
 		}
 	}
 
 	public function hapuspts1($id)
 	{
-		$this->nilai_model->hapusPts_9($id);
+		$this->nilai_model->hapusPts_7($id);
 		$this->session->set_flashdata('flash', 'Dihapus');
-		redirect('kelas9/pts1');
+		redirect('admin/kelas7/pts1');
 	}
 
 	public function hapuspts2($id)
 	{
-		$this->nilai_model->hapusPts_9($id);
+		$this->nilai_model->hapusPts_7($id);
 		$this->session->set_flashdata('flash', 'Dihapus');
-		redirect('kelas9/pts2');
+		redirect('admin/kelas7/pts2');
 	}
+
+	//************************************************************//
 
 	//Controller PTS 1
 	public function pts1()
 	{
-		$data['nilai'] = $this->nilai_model->getNilaiPts1_9();
-		$data['judul'] = 'Data Nilai PTS 1 Kelas 9';
+		$data['judul'] = 'Data Nilai PTS 1 Kelas 7';
+		$data['nilai'] = $this->nilai_model->getNilaiPts1_7();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/kelas9/pts1');
+		$this->load->view('admin/kelas7/pts1', $data);
 		$this->load->view('admin/footer');
 	}
 
 	//End Controller PTS 1
 
-	//##########################################################//
-
 	//Controller PTS 2
 	public function pts2()
 	{
-		$data['nilai'] = $this->nilai_model->getNilaiPts2_9();
-		$data['judul'] = 'Data Nilai PTS 2 Kelas 9';
+		$data['judul'] = 'Data Nilai PTS 2 Kelas 7';
+		$data['nilai'] = $this->nilai_model->getNilaiPts2_7();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/kelas9/pts2', $data);
+		$this->load->view('admin/kelas7/pts2', $data);
 		$this->load->view('admin/footer');
 	}
 
 	//End Controller PTS 2
 
 	//###########################--End PTS--######################################//
+
+
 
 	public function simpan_pas()
 	{
@@ -165,12 +167,12 @@ class Kelas9 extends CI_Controller
 			'tik' => $tik
 		);
 
-        $this->nilai_model->simpanpas9($data);
+        $this->nilai_model->simpanpas7($data);
 		$this->session->set_flashdata('flash', 'Ditambahkan');
 		if ($kategori == 'PAT') {
-			redirect('kelas9/pat');
+			redirect('admin/kelas7/pat');
 		} else {
-			redirect('kelas9/pas');
+			redirect('admin/kelas7/pas');
 		}
 	}
 
@@ -206,50 +208,49 @@ class Kelas9 extends CI_Controller
 			'tik' => $tik
 		);
 
-        $this->nilai_model->simpanpas9edit($data,$id);
+        $this->nilai_model->simpanpas7edit($data,$id);
 		$this->session->set_flashdata('flash', 'Diubah');
 		if ($kategori == 'PAT') {
-			redirect('kelas9/pat');
+			redirect('admin/kelas7/pat');
 		} else {
-			redirect('kelas9/pas');
+			redirect('admin/kelas7/pas');
 		}
 	}
 
 	public function hapuspat($id)
 	{
-		$this->nilai_model->hapusPas_9($id);
+		$this->nilai_model->hapuspas7($id);
 		$this->session->set_flashdata('flash', 'Dihapus');
-		redirect('kelas9/pat');
+		redirect('admin/kelas7/pat');
 	}
-
 	public function hapuspas($id)
 	{
-		$this->nilai_model->hapusPas_9($id);
+		$this->nilai_model->hapuspas7($id);
 		$this->session->set_flashdata('flash', 'Dihapus');
-		redirect('kelas9/pas');
+		redirect('admin/kelas7/pas');
 	}
+
+	//************************************************************//
 
 	//Controller PAT
 	public function pat()
 	{
-		$data['nilai'] = $this->nilai_model->getNilaiPat_9();
-		$data['judul'] = 'Data Nilai PAT Kelas 9';
+		$data['judul'] = 'Data Nilai PAT Kelas 7';
+		$data['nilai'] = $this->nilai_model->getNilaiPat_7();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/kelas9/pat', $data);
+		$this->load->view('admin/kelas7/pat', $data);
 		$this->load->view('admin/footer');
 	}
 
 	//End Controller PAT
 
-	//##########################################################//
-
 	//Controller PAS
 	public function pas()
 	{
-		$data['nilai'] = $this->nilai_model->getNilaiPas_9();
-		$data['judul'] = 'Data Nilai PAS Kelas 9';
+		$data['judul'] = 'Data Nilai PAS Kelas 7';
+		$data['nilai'] = $this->nilai_model->getNilaiPas_7();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/kelas9/pas', $data);
+		$this->load->view('admin/kelas7/pas', $data);
 		$this->load->view('admin/footer');
 	}
 

@@ -1,5 +1,6 @@
 <?php 
-class Berita_model extends CI_Model{ 
+class Berita_model extends CI_Model
+{ 
  
 	function simpan_berita($jdl,$berita,$gambar)
 	{
@@ -13,7 +14,7 @@ class Berita_model extends CI_Model{
 		);
 		return $this->db->INSERT('tbl_berita', $data);
 	}
-
+ 
 	function get_berita_by_kode($kode)
 	{
 		$hsl=$this->db->query("SELECT * FROM tbl_berita WHERE berita_id='$kode'");

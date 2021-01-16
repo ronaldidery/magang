@@ -25,7 +25,7 @@
         <div class="container-fluid">
             <div class="breadcrumb">
                 <div class="card-footer clearfix">
-                    <a href="<?= base_url('ppdb/print_data') ?>">
+                    <a href="<?= base_url('admin/ppdb/print_data') ?>">
                         <button type="button" class="btn bg-danger float-right"><i class="fas fa-print"></i> Print</button>
                     </a>
                 </div>
@@ -35,8 +35,8 @@
                         <span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="<?= base_url('ppdb/pdf') ?>">PDF</a></li>
-                        <li><a class="dropdown-item" href="<?= base_url('ppdb/excel') ?>">Excel</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url('admin/ppdb/pdf') ?>">PDF</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url('admin/ppdb/excel') ?>">Excel</a></li>
                       </ul>
                     </div>
                 </div>
@@ -85,10 +85,10 @@
                                     <td><?= $value['no_tlp']; ?></td>
                                     <td>
             <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['id_pendaftar'];?>"> detail</a>
-            <a href="<?= base_url(); ?>ppdb/print_data_pendaftar/<?= $value['id_pendaftar'];?>" class="btn bg-success"><i class="fas fa-print"></i></a>
+            <a href="<?= base_url(); ?>admin/ppdb/print_data_pendaftar/<?= $value['id_pendaftar'];?>" class="btn bg-success"><i class="fas fa-print"></i></a>
             <a href="" class="btn bg-success"><i class="fas fa-image"></i></a>
             <a href="" class="btn bg-success"><i class="fas fa-book"></i></a>
-            <a href="<?= base_url(); ?>ppdb/hapus/<?= $value['id_pendaftar'];?>" class="btn bg-danger" onclick="return confirm('Yakin akan dihapus?')" >hapus</a>
+            <a href="<?= base_url(); ?>admin/ppdb/hapus/<?= $value['id_pendaftar'];?>" class="btn bg-danger" onclick="return confirm('Yakin akan dihapus?')" >hapus</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?> 

@@ -1,35 +1,35 @@
-<?php
+<?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class Galeri extends CI_Controller {
+class Event extends CI_Controller { 
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('galeri_model');
+		$this->load->model('event_model');
         $this->load->library('upload');
 	}
 
 	public function index() 
 	{
-		$data['judul'] = 'Data Foto Galeri';
-		$data['galeri'] = $this->galeri_model->getAllGaleri();
+		$data['judul'] = 'Data Event MTs Bima Bhakti Pertiwi';
+		$data['event'] = $this->event_model->getAllEvent();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/galeri/index');
+		$this->load->view('admin/event/index');
 		$this->load->view('admin/footer');
 	}
 
-	public function tambah_galeri()
+	public function tambah_event()
 	{
-		$data['judul'] = 'Tambah Data Galeri';
+		$data['judul'] = 'Data Event';
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/galeri/tambah');
+		$this->load->view('admin/event/tambah');
 		$this->load->view('admin/footer');
 	}
 
 	public function simpan_post()
 	{
-		$config['upload_path'] = './assets/foto/galeri/'; //path folder
+		$config['upload_path'] = './assets/foto/event/'; //path folder
 	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 	    $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
@@ -39,51 +39,52 @@ class Galeri extends CI_Controller {
 	        	$gbr = $this->upload->data();
 	            //Compress Image
 	            $config['image_library']='gd2';
-	            $config['source_image']='./assets/foto/galeri/'.$gbr['file_name'];
+	            $config['source_image']='./assets/foto/event/'.$gbr['file_name'];
 	            $config['create_thumb']= FALSE;
 	            $config['maintain_ratio']= FALSE;
 	            $config['quality']= '60%';
 	            $config['width']= 710;
 	            $config['height']= 420;
-	            $config['new_image']= './assets/foto/galeri/'.$gbr['file_name'];
+	            $config['new_image']= './assets/foto/event/'.$gbr['file_name'];
 	            $this->load->library('image_lib', $config);
 	            $this->image_lib->resize();
 
 	            $gambar=$gbr['file_name'];
                 $jdl=$this->input->post('judul', TRUE);
+                $desk=$this->input->post('deskripsi', TRUE);
 
-				$this->galeri_model->simpan_galeri($jdl,$gambar);
+				$this->event_model->simpan_event($jdl,$desk,$gambar);
 				$this->session->set_flashdata('flash', 'Ditambahkan');
-				redirect('galeri');
+				redirect('event');
 		}else{
-			redirect('galeri');
+			redirect('admin/event');
 	    } 
 	                 
 	    }else{
-			redirect('galeri');
+			redirect('admin/event');
 		}		
 	}
 
 	public function hapus($id)
 	{
-		$this->galeri_model->hapusDataGaleri($id);
+		$this->event_model->hapusDataEvent($id);
 		$this->session->set_flashdata('flash', 'Dihapus');
-		redirect('galeri');
+		redirect('admin/event');
 	} 
 
 	public function detail($id)
 	{
-		$data['judul'] = 'Detail Data Galeri';
-		$data['galeri'] = $this->galeri_model->getGaleriById($id);
+		$data['judul'] = 'Detail Data Carousel';
+		$data['event'] = $this->event_model->getCarouselById($id);
 
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/galeri/detail', $data);
+		$this->load->view('admin/event/detail', $data);
 		$this->load->view('admin/footer');
 	}
 
 	public function ubah_data($id)
 	{
-		$config['upload_path'] = './assets/foto/galeri/'; //path folder
+		$config['upload_path'] = './assets/foto/event/'; //path folder
 	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 	    $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
@@ -92,37 +93,39 @@ class Galeri extends CI_Controller {
 	        if ($this->upload->do_upload('filefoto')){
 
 	        	//Unlink atau hapus Gambar yang sebelumnya
-	        	$row = $this->db->where('id_galeri',$id)->get('tbl_galeri')->row();
-        		unlink('assets/foto/galeri/'.$row->foto_galeri);
+	        	$row = $this->db->where('berita_id',$id)->get('tbl_berita')->row();
+        		unlink('assets/foto/event/'.$row->berita_image);
 
 	        	$gbr = $this->upload->data();
 	            //Compress Image
-	            $config['image_library']='gd2';
-	            $config['source_image']='./assets/foto/galeri/'.$gbr['file_name'];
-	            $config['create_thumb']= FALSE;
-	            $config['maintain_ratio']= FALSE;
-	            $config['quality']= '60%';
-	            $config['width']= 710;
-	            $config['height']= 420;
-	            $config['new_image']= './assets/foto/galeri/'.$gbr['file_name'];
+	            $config['image_library'] = 'gd2';
+	            $config['source_image'] = './assets/foto/event/'.$gbr['file_name'];
+	            $config['create_thumb'] = FALSE;
+	            $config['maintain_ratio'] = FALSE;
+	            $config['quality'] = '60%';
+	            $config['width'] = 710;
+	            $config['height'] = 420;
+	            $config['new_image'] = './assets/foto/event/'.$gbr['file_name'];
 	            $this->load->library('image_lib', $config);
 	            $this->image_lib->resize();
 
 	            $gambar=$gbr['file_name'];
                 $jdl=$this->input->post('judul', TRUE);
+                $desk=$this->input->post('deskripsi', TRUE);
 
-				$this->galeri_model->updateGaleriFoto($jdl,$gambar,$id);
+				$this->event_model->updateEventFoto($jdl,$desk,$gambar,$id);
 				$this->session->set_flashdata('flash', 'Diubah');
-				redirect('galeri');
+				redirect('admin/event');
 			}else{
-				redirect('galeri');
+				redirect('admin/event');
 	    	}             
 	    }else{
 			$jdl=$this->input->post('judul', TRUE);
+            $desk=$this->input->post('deskripsi', TRUE);
 
-            $this->galeri_model->updateGaleri($jdl,$id);
+            $this->event_model->updateEvent($jdl,$desk,$id);
 			$this->session->set_flashdata('flash', 'Diubah');
-			redirect('galeri');
+			redirect('admin/event');
 		}		
 	}
-} 
+}

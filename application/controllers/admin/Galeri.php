@@ -1,35 +1,35 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class Carousel extends CI_Controller { 
+class Galeri extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('carousel_model');
+		$this->load->model('galeri_model');
         $this->load->library('upload');
 	}
 
 	public function index() 
 	{
-		$data['judul'] = 'Data Carousel';
-		$data['carousel'] = $this->carousel_model->getAllCarousel();
+		$data['judul'] = 'Data Foto Galeri';
+		$data['galeri'] = $this->galeri_model->getAllGaleri();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/carousel/index', $data);
+		$this->load->view('admin/galeri/index');
 		$this->load->view('admin/footer');
 	}
 
-	public function tambah_carousel()
+	public function tambah_galeri()
 	{
-		$data['judul'] = 'Data Carousel';
+		$data['judul'] = 'Tambah Data Galeri';
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/carousel/tambah');
+		$this->load->view('admin/galeri/tambah');
 		$this->load->view('admin/footer');
 	}
 
 	public function simpan_post()
 	{
-		$config['upload_path'] = './assets/foto/carousel/'; //path folder
+		$config['upload_path'] = './assets/foto/galeri/'; //path folder
 	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 	    $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
@@ -39,41 +39,51 @@ class Carousel extends CI_Controller {
 	        	$gbr = $this->upload->data();
 	            //Compress Image
 	            $config['image_library']='gd2';
-	            $config['source_image']='./assets/foto/carousel/'.$gbr['file_name'];
+	            $config['source_image']='./assets/foto/galeri/'.$gbr['file_name'];
 	            $config['create_thumb']= FALSE;
 	            $config['maintain_ratio']= FALSE;
 	            $config['quality']= '60%';
 	            $config['width']= 710;
 	            $config['height']= 420;
-	            $config['new_image']= './assets/foto/carousel/'.$gbr['file_name'];
+	            $config['new_image']= './assets/foto/galeri/'.$gbr['file_name'];
 	            $this->load->library('image_lib', $config);
 	            $this->image_lib->resize();
 
 	            $gambar=$gbr['file_name'];
                 $jdl=$this->input->post('judul', TRUE);
 
-				$this->carousel_model->simpan_carousel($jdl,$gambar);
+				$this->galeri_model->simpan_galeri($jdl,$gambar);
 				$this->session->set_flashdata('flash', 'Ditambahkan');
-				redirect('carousel');
+				redirect('admin/galeri');
 		}else{
-			redirect('carousel/tambah');
+			redirect('admin/galeri');
 	    } 
 	                 
 	    }else{
-			redirect('carousel/tambah');
+			redirect('admin/galeri');
 		}		
 	}
 
 	public function hapus($id)
 	{
-		$this->carousel_model->hapusDataCarousel($id);
+		$this->galeri_model->hapusDataGaleri($id);
 		$this->session->set_flashdata('flash', 'Dihapus');
-		redirect('carousel');
+		redirect('admin/galeri');
 	} 
+
+	public function detail($id)
+	{
+		$data['judul'] = 'Detail Data Galeri';
+		$data['galeri'] = $this->galeri_model->getGaleriById($id);
+
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/galeri/detail', $data);
+		$this->load->view('admin/footer');
+	}
 
 	public function ubah_data($id)
 	{
-		$config['upload_path'] = './assets/foto/carousel/'; //path folder
+		$config['upload_path'] = './assets/foto/galeri/'; //path folder
 	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 	    $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
@@ -82,37 +92,37 @@ class Carousel extends CI_Controller {
 	        if ($this->upload->do_upload('filefoto')){
 
 	        	//Unlink atau hapus Gambar yang sebelumnya
-	        	$row = $this->db->where('id_carousel',$id)->get('tbl_carousel')->row();
-        		unlink('assets/foto/carousel/'.$row->carousel_image);
+	        	$row = $this->db->where('id_galeri',$id)->get('tbl_galeri')->row();
+        		unlink('assets/foto/galeri/'.$row->foto_galeri);
 
 	        	$gbr = $this->upload->data();
 	            //Compress Image
 	            $config['image_library']='gd2';
-	            $config['source_image']='./assets/foto/carousel/'.$gbr['file_name'];
+	            $config['source_image']='./assets/foto/galeri/'.$gbr['file_name'];
 	            $config['create_thumb']= FALSE;
 	            $config['maintain_ratio']= FALSE;
 	            $config['quality']= '60%';
 	            $config['width']= 710;
 	            $config['height']= 420;
-	            $config['new_image']= './assets/foto/carousel/'.$gbr['file_name'];
+	            $config['new_image']= './assets/foto/galeri/'.$gbr['file_name'];
 	            $this->load->library('image_lib', $config);
 	            $this->image_lib->resize();
 
 	            $gambar=$gbr['file_name'];
                 $jdl=$this->input->post('judul', TRUE);
 
-				$this->carousel_model->updateCarouselFoto($jdl,$gambar,$id);
+				$this->galeri_model->updateGaleriFoto($jdl,$gambar,$id);
 				$this->session->set_flashdata('flash', 'Diubah');
-				redirect('carousel');
+				redirect('admin/galeri');
 			}else{
-				redirect('carousel');
+				redirect('admin/galeri');
 	    	}             
 	    }else{
 			$jdl=$this->input->post('judul', TRUE);
 
-            $this->carousel_model->updateCarousel($jdl,$id);
+            $this->galeri_model->updateGaleri($jdl,$id);
 			$this->session->set_flashdata('flash', 'Diubah');
-			redirect('carousel');
+			redirect('admin/galeri');
 		}		
 	}
-}
+} 

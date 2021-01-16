@@ -57,13 +57,13 @@ class Guru extends CI_Controller {
 
 				$this->guru_model->simpan_guru($nama,$nip,$email,$nomor,$gambar);
 				$this->session->set_flashdata('flash', 'Ditambahkan');
-				redirect('guru');
+				redirect('admin/guru');
 		}else{
-			redirect('guru');
+			redirect('admin/guru');
 	    } 
 	                 
 	    }else{
-			redirect('guru');
+			redirect('admin/guru');
 		}		
 	}
 
@@ -71,7 +71,7 @@ class Guru extends CI_Controller {
 	{
 		$this->guru_model->hapusDataGuru($id);
 		$this->session->set_flashdata('flash', 'Dihapus');
-		redirect('guru');
+		redirect('admin/guru');
 	}
 
 	public function ubah_data($id)
@@ -109,9 +109,9 @@ class Guru extends CI_Controller {
 
 				$this->guru_model->updateGuruFoto($nama,$nip,$email,$nomor,$gambar,$id);
 				$this->session->set_flashdata('flash', 'Diubah');
-				redirect('guru');
+				redirect('admin/guru');
 			}else{
-				redirect('guru');
+				redirect('admin/guru');
 	    	}             
 	    }else{
 			$nama = $this->input->post('nama', TRUE);
@@ -121,7 +121,7 @@ class Guru extends CI_Controller {
 
 			$this->guru_model->updateGuru($nama,$nip,$email,$nomor,$id);
 			$this->session->set_flashdata('flash', 'Diubah');
-			redirect('guru');
+			redirect('admin/guru');
 		}		
 	}
 }

@@ -116,16 +116,17 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-item">
-                <a href="<?php echo base_url();?>home2" class="nav-link active">
+                <a href="<?php echo base_url();?>home2" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Dashboard
                   </p>
                 </a>
               </li>
-    <p>Interface</p>
+              <br>
+    <div class="title" style="margin-left: 10px; color: white;"><h5>INTERFACE</h5></div>
               <li class="nav-item">
-                <a href="<?= base_url('admin'); ?>" class="nav-link">
+                <a href="<?= base_url('admin/admin'); ?>" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p>
                     Berita
@@ -133,7 +134,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('carousel'); ?>" class="nav-link">
+                <a href="<?= base_url('admin/carousel'); ?>" class="nav-link">
                   <i class="nav-icon fas fa-image"></i>
                   <p>
                     Carousel
@@ -141,7 +142,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('event'); ?>" class="nav-link">
+                <a href="<?= base_url('admin/event'); ?>" class="nav-link">
                   <i class="nav-icon far fa-image"></i>
                   <p>
                     Event
@@ -149,7 +150,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('galeri'); ?>" class="nav-link">
+                <a href="<?= base_url('admin/galeri'); ?>" class="nav-link">
                   <i class="nav-icon far fa-image"></i>
                   <p>
                     Galeri
@@ -157,7 +158,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('guru'); ?>" class="nav-link">
+                <a href="<?= base_url('admin/guru'); ?>" class="nav-link">
                   <i class="nav-icon fas fa-book"></i>
                   <p>
                     Guru
@@ -165,7 +166,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('ppdb'); ?>" class="nav-link">
+                <a href="<?= base_url('admin/ppdb'); ?>" class="nav-link">
                   <i class="nav-icon fas fa-columns"></i>
                   <p>
                     PPDB
@@ -230,7 +231,8 @@
                   </li>
                 </ul>
               </li>
-    <p>Data Nilai Siswa</p>
+              <br>
+    <div class="title" style="margin-left: 10px; color: white;"><h5>DATA NILAI SISWA</h5></div>
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-table"></i>
@@ -241,27 +243,27 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?= base_url('kelas7/pts1'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/kelas7/pts1'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 1</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('kelas7/pat'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/kelas7/pas'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>PAT</p>
+                      <p>PAS</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('kelas7/pts2'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/kelas7/pts2'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 2</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('kelas7/pas'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/kelas7/pat'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>PAS</p>
+                      <p>PAT</p>
                     </a>
                   </li>
                 </ul>
@@ -276,27 +278,27 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?= base_url('kelas8/pts1'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/kelas8/pts1'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 1</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('kelas8/pat'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/kelas8/pas'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PAS</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('kelas8/pts2'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/kelas8/pts2'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 2</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('kelas8/pas'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/kelas8/pat'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>PAS</p>
+                      <p>PAT</p>
                     </a>
                   </li>
                 </ul>
@@ -311,27 +313,27 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?= base_url('kelas9/pts1'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/kelas9/pts1'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 1</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('kelas9/pat'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/kelas9/pas'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PAS</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('kelas9/pts2'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/kelas9/pts2'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 2</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('kelas9/pas'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/kelas9/pat'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>PAS</p>
+                      <p>PAT</p>
                     </a>
                   </li>
                 </ul>

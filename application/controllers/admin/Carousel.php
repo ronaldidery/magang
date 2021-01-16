@@ -1,35 +1,35 @@
-<?php 
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class Event extends CI_Controller { 
+class Carousel extends CI_Controller { 
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('event_model');
+		$this->load->model('carousel_model');
         $this->load->library('upload');
 	}
 
 	public function index() 
 	{
-		$data['judul'] = 'Data Event MTs Bima Bhakti Pertiwi';
-		$data['event'] = $this->event_model->getAllEvent();
+		$data['judul'] = 'Data Carousel';
+		$data['carousel'] = $this->carousel_model->getAllCarousel();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/event/index');
+		$this->load->view('admin/carousel/index', $data);
 		$this->load->view('admin/footer');
 	}
 
-	public function tambah_event()
+	public function tambah_carousel()
 	{
-		$data['judul'] = 'Data Event';
+		$data['judul'] = 'Data Carousel';
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/event/tambah');
+		$this->load->view('admin/carousel/tambah');
 		$this->load->view('admin/footer');
 	}
 
 	public function simpan_post()
 	{
-		$config['upload_path'] = './assets/foto/event/'; //path folder
+		$config['upload_path'] = './assets/foto/carousel/'; //path folder
 	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 	    $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
@@ -39,52 +39,41 @@ class Event extends CI_Controller {
 	        	$gbr = $this->upload->data();
 	            //Compress Image
 	            $config['image_library']='gd2';
-	            $config['source_image']='./assets/foto/event/'.$gbr['file_name'];
+	            $config['source_image']='./assets/foto/carousel/'.$gbr['file_name'];
 	            $config['create_thumb']= FALSE;
 	            $config['maintain_ratio']= FALSE;
 	            $config['quality']= '60%';
 	            $config['width']= 710;
 	            $config['height']= 420;
-	            $config['new_image']= './assets/foto/event/'.$gbr['file_name'];
+	            $config['new_image']= './assets/foto/carousel/'.$gbr['file_name'];
 	            $this->load->library('image_lib', $config);
 	            $this->image_lib->resize();
 
 	            $gambar=$gbr['file_name'];
                 $jdl=$this->input->post('judul', TRUE);
-                $desk=$this->input->post('deskripsi', TRUE);
 
-				$this->event_model->simpan_event($jdl,$desk,$gambar);
+				$this->carousel_model->simpan_carousel($jdl,$gambar);
 				$this->session->set_flashdata('flash', 'Ditambahkan');
-				redirect('event');
+				redirect('admin/carousel');
 		}else{
-			redirect('event');
+			redirect('admin/carousel');
 	    } 
 	                 
 	    }else{
-			redirect('event');
+			redirect('admin/carousel');
 		}		
 	}
 
 	public function hapus($id)
 	{
-		$this->event_model->hapusDataEvent($id);
+		$this->carousel_model->hapusDataCarousel($id);
 		$this->session->set_flashdata('flash', 'Dihapus');
-		redirect('event');
+		redirect('admin/carousel');
 	} 
-
-	public function detail($id)
-	{
-		$data['judul'] = 'Detail Data Carousel';
-		$data['event'] = $this->event_model->getCarouselById($id);
-
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/event/detail', $data);
-		$this->load->view('admin/footer');
-	}
 
 	public function ubah_data($id)
 	{
-		$config['upload_path'] = './assets/foto/event/'; //path folder
+		$config['upload_path'] = './assets/foto/carousel/'; //path folder
 	    $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 	    $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
@@ -93,39 +82,37 @@ class Event extends CI_Controller {
 	        if ($this->upload->do_upload('filefoto')){
 
 	        	//Unlink atau hapus Gambar yang sebelumnya
-	        	$row = $this->db->where('berita_id',$id)->get('tbl_berita')->row();
-        		unlink('assets/foto/event/'.$row->berita_image);
+	        	$row = $this->db->where('id_carousel',$id)->get('tbl_carousel')->row();
+        		unlink('assets/foto/carousel/'.$row->carousel_image);
 
 	        	$gbr = $this->upload->data();
 	            //Compress Image
-	            $config['image_library'] = 'gd2';
-	            $config['source_image'] = './assets/foto/event/'.$gbr['file_name'];
-	            $config['create_thumb'] = FALSE;
-	            $config['maintain_ratio'] = FALSE;
-	            $config['quality'] = '60%';
-	            $config['width'] = 710;
-	            $config['height'] = 420;
-	            $config['new_image'] = './assets/foto/event/'.$gbr['file_name'];
+	            $config['image_library']='gd2';
+	            $config['source_image']='./assets/foto/carousel/'.$gbr['file_name'];
+	            $config['create_thumb']= FALSE;
+	            $config['maintain_ratio']= FALSE;
+	            $config['quality']= '60%';
+	            $config['width']= 710;
+	            $config['height']= 420;
+	            $config['new_image']= './assets/foto/carousel/'.$gbr['file_name'];
 	            $this->load->library('image_lib', $config);
 	            $this->image_lib->resize();
 
 	            $gambar=$gbr['file_name'];
                 $jdl=$this->input->post('judul', TRUE);
-                $desk=$this->input->post('deskripsi', TRUE);
 
-				$this->event_model->updateEventFoto($jdl,$desk,$gambar,$id);
+				$this->carousel_model->updateCarouselFoto($jdl,$gambar,$id);
 				$this->session->set_flashdata('flash', 'Diubah');
-				redirect('event');
+				redirect('admin/carousel');
 			}else{
-				redirect('event');
+				redirect('admin/carousel');
 	    	}             
 	    }else{
 			$jdl=$this->input->post('judul', TRUE);
-            $desk=$this->input->post('deskripsi', TRUE);
 
-            $this->event_model->updateEvent($jdl,$desk,$id);
+            $this->carousel_model->updateCarousel($jdl,$id);
 			$this->session->set_flashdata('flash', 'Diubah');
-			redirect('event');
+			redirect('admin/carousel');
 		}		
 	}
 }

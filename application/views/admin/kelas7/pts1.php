@@ -61,7 +61,7 @@
                     <th width="250">Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody> 
               <?php $i = 1;
                 foreach ($nilai as $value) : ?>
                     <tr>
@@ -72,7 +72,7 @@
                         <td>
                             <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['id'];?>"> detail</a>
                             <a id="detail" type="button" data-toggle="modal" data-target="#editModal<?= $value['id'];?>" class="btn bg-success">edit</a>
-                            <a href="<?= base_url(); ?>kelas7/hapuspts/<?= $value['id'];?>" class="btn bg-danger" onclick="return confirm('nilai akan dihapus?')" >hapus</a>
+                            <a href="<?= base_url(); ?>admin/kelas7/hapuspts1/<?= $value['id'];?>" class="btn bg-danger" onclick="return confirm('nilai akan dihapus?')" >hapus</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -92,7 +92,7 @@
         <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-        <form action="<?php echo base_url('kelas7/simpan_pts')?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url('admin/kelas7/simpan_pts')?>" method="post" enctype="multipart/form-data">
             <h4><strong>Identitas Siswa.</strong></h4>
             <hr>
             <h5>Nama Siswa:</h5>
@@ -232,7 +232,7 @@ foreach ($nilai as $value) : $no++ ?>
         <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-        <form action="<?php echo base_url(); ?>kelas7/simpan_edit_pts/<?php echo $value['id'];?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url(); ?>admin/kelas7/simpan_edit_pts/<?php echo $value['id'];?>" method="post" enctype="multipart/form-data">
             <h4><strong>Identitas Siswa.</strong></h4>
             <hr>
             <h5>Nama Siswa:</h5>

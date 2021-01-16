@@ -74,7 +74,7 @@
                         <td>
                             <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['berita_id'];?>"> detail</a>
                             <a id="detail" type="button" data-toggle="modal" data-target="#editModal<?= $value['berita_id'];?>" class="btn bg-success">edit</a>
-                            <a href="<?= base_url(); ?>admin/hapus/<?= $value['berita_id'];?>" class="btn bg-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
+                            <a href="<?= base_url(); ?>admin/admin/hapus/<?= $value['berita_id'];?>" class="btn bg-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
                         </td>
                     </tr>
                 <?php endforeach; ?> 
@@ -94,7 +94,7 @@
         <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-        <form action="<?php echo base_url('admin/simpan_post')?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url('admin/admin/simpan_post')?>" method="post" enctype="multipart/form-data">
             <h5>Judul Berita:</h5>
             <input type="text" name="judul" class="form-control" placeholder="Judul berita" required/><br/>
             <h5>Deskripsi Berita:</h5>
@@ -154,7 +154,7 @@ foreach ($berita as $value) : $no++ ?>
         <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-        <form action="<?php echo base_url(); ?>admin/ubah_data/<?php echo $value['berita_id'];?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url(); ?>admin/admin/ubah_data/<?php echo $value['berita_id'];?>" method="post" enctype="multipart/form-data">
             <h5>Judul Berita:</h5>
             <input value="<?= $value['berita_judul']; ?>" type="text" name="judul" class="form-control" placeholder="Judul berita" required/><br/>
             <h5>Deskripsi Berita:</h5>

@@ -69,7 +69,7 @@
                     <td>
                         <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['id_guru'];?>"> detail</a>
                         <a id="detail" type="button" data-toggle="modal" data-target="#editModal<?= $value['id_guru'];?>" class="btn bg-success">edit</a>
-                        <a href="<?= base_url(); ?>guru/hapus/<?= $value['id_guru'];?>" class="btn bg-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
+                        <a href="<?= base_url(); ?>admin/guru/hapus/<?= $value['id_guru'];?>" class="btn bg-danger" onclick="return confirm('berita akan dihapus?')" >hapus</a>
                     </td>
                 </tr>
             <?php endforeach; ?> 
@@ -89,7 +89,7 @@
         <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-        <form action="<?php echo base_url('guru/simpan_post')?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url('admin/guru/simpan_post')?>" method="post" enctype="multipart/form-data">
             <h5>Nama Guru:</h5>
             <input type="text" name="nama" class="form-control" placeholder="Nama guru" required/><br/>
             <h5>NIP Guru:</h5>
@@ -168,7 +168,7 @@ foreach ($guru as $value) : $no++ ?>
         <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-        <form action="<?php echo base_url(); ?>guru/ubah_data/<?php echo $value['id_guru'];?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url(); ?>admin/guru/ubah_data/<?php echo $value['id_guru'];?>" method="post" enctype="multipart/form-data">
             <h5>Nama Guru:</h5>
             <input value="<?= $value['nama_guru'];?>" type="text" name="nama" class="form-control" placeholder="Nama guru" required/><br/>
             <h5>NIP Guru:</h5>

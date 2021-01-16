@@ -75,7 +75,7 @@
                                     <td>
             <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['id_galeri'];?>"> detail</a>
             <a id="detail" type="button" data-toggle="modal" data-target="#editModal<?= $value['id_galeri'];?>" class="btn bg-success">edit</a>
-            <a href="<?= base_url(); ?>galeri/hapus/<?= $value['id_galeri'];?>" class="btn bg-danger" onclick="return confirm('carousel akan dihapus?')" >hapus</a>
+            <a href="<?= base_url(); ?>admin/galeri/hapus/<?= $value['id_galeri'];?>" class="btn bg-danger" onclick="return confirm('carousel akan dihapus?')" >hapus</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?> 
@@ -95,7 +95,7 @@
         <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-        <form action="<?php echo base_url('galeri/simpan_post')?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url('admin/galeri/simpan_post')?>" method="post" enctype="multipart/form-data">
             <h5>Judul Galeri:</h5>
             <input type="text" name="judul" class="form-control" placeholder="Judul galeri" required/><br/>
             <h5>Upload Foto</h5>
@@ -153,7 +153,7 @@ foreach ($galeri as $value) : $no++ ?>
         <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-        <form action="<?php echo base_url(); ?>galeri/ubah_data/<?php echo $value['id_galeri'];?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url(); ?>admin/galeri/ubah_data/<?php echo $value['id_galeri'];?>" method="post" enctype="multipart/form-data">
             <h5>Judul Galeri:</h5>
             <input value="<?= $value['judul_galeri']; ?>" type="text" name="judul" class="form-control" placeholder="Judul galeri" required/><br/>
             <h5>Upload Foto</h5>

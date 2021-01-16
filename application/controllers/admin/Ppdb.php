@@ -23,7 +23,7 @@ class Ppdb extends CI_Controller {
     {
         $this->ppdb_model->hapusDataPPDB($id);
         $this->session->set_flashdata('flash', 'Dihapus');
-        redirect('ppdb');
+        redirect('admin/ppdb');
     } 
 
     public function print_data()
