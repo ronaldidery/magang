@@ -8,6 +8,7 @@ class Ppdb extends CI_Controller {
         parent::__construct();
         $this->load->helper("url"); 
         $this->load->model('ppdb_model'); 
+        $this->load->helper('download');
     }
 
 	public function index() 
@@ -100,5 +101,15 @@ class Ppdb extends CI_Controller {
         $writer->save('php://output');
 
         exit;
+    }
+
+    public function download_ijazah($id)
+    {
+        //$data = file_get_contents($kd_image);
+        //force_download('assets/foto/document/',$data);
+
+        $file = $this->ppdb_model->getDataPendaftaranBy($id);
+        $data = 'assets/foto/document/'.$file['ijazah_foto'];
+        force_download($data, NULL);
     }
 }

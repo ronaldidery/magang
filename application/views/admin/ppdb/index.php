@@ -86,7 +86,7 @@
                                     <td>
             <a id="detail" type="button" class="btn bg-warning" data-toggle="modal" data-target="#detailModal<?= $value['id_pendaftar'];?>"> detail</a>
             <a href="<?= base_url(); ?>admin/ppdb/print_data_pendaftar/<?= $value['id_pendaftar'];?>" class="btn bg-success"><i class="fas fa-print"></i></a>
-            <a href="" class="btn bg-success"><i class="fas fa-image"></i></a>
+            <a href="<?= base_url(); ?>admin/ppdb/download_ijazah/<?= $value['id_pendaftar'];?>" class="btn bg-success"><i class="fas fa-image"></i></a>
             <a href="" class="btn bg-success"><i class="fas fa-book"></i></a>
             <a href="<?= base_url(); ?>admin/ppdb/hapus/<?= $value['id_pendaftar'];?>" class="btn bg-danger" onclick="return confirm('Yakin akan dihapus?')" >hapus</a>
                                     </td>
