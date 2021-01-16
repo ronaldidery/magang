@@ -112,4 +112,14 @@ class Ppdb extends CI_Controller {
         $data = 'assets/foto/document/'.$file['ijazah_foto'];
         force_download($data, NULL);
     }
+
+    public function download_kk($id)
+    {
+        //$data = file_get_contents($kd_image);
+        //force_download('assets/foto/document/',$data);
+
+        $file = $this->ppdb_model->getDataPendaftaranBy($id);
+        $data = 'assets/foto/document/'.$file['kk_foto'];
+        force_download($data, NULL);
+    }
 }
