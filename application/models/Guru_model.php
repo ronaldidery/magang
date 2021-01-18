@@ -3,7 +3,7 @@ class Guru_model extends CI_Model{
 
 	function getAllBerita() 
 	{
-		return $this->db->query("SELECT * FROM tbl_guru ORDER BY id_guru DESC")->result_array();
+		return $this->db->query("SELECT * FROM tbl_guru ORDER BY id_guru DESC")->result_array(); 
 	}
  
 	function simpan_guru($nama,$nip,$email,$nomor,$gambar)
@@ -59,5 +59,19 @@ class Guru_model extends CI_Model{
 			'no_hp' => $nomor
 		);
 		return $this->db->update('tbl_guru', $data);
+	}
+
+
+//Home MOdell
+	public function getGuru($limit, $start) 
+	{
+		$this->db->ORDER_BY("id_guru", "DESC");
+		$query = $this->db->get('tbl_guru', $limit, $start);
+		return $query->result_array();
+	}
+
+	public function countAllGuru()
+	{
+		return $this->db->get('tbl_guru')->num_rows();
 	}
 }

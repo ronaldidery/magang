@@ -221,7 +221,7 @@
                 </tr>
                 <tr>
                     <td height="30">15</td>
-                    <td class="tl">QUR'AN HADIST<br></td>
+                    <td class="tl">QUR'AN HADITS<br></td>
                     <td>2</td>
                     <td> / &nbsp; &nbsp; / </td>
                     <td> / &nbsp; &nbsp; /</td>

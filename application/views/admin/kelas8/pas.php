@@ -6,7 +6,7 @@
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
-    <div class="content-header">
+    <div class="content-header"> 
       <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
@@ -92,13 +92,15 @@
         <button type="button" class="btn-remove" data-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-        <form action="<?php echo base_url('admin/kelas8/simpan_pas')?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url('admin/nilai/simpan_data')?>" method="post" enctype="multipart/form-data">
             <h4><strong>Identitas Siswa.</strong></h4>
             <hr>
             <h5>Nama Siswa:</h5>
             <input type="text" name="nama" class="form-control" placeholder="nama siswa" required/><br/>
             <h5>NIS Siswa:</h5>
             <input type="text" name="nis" class="form-control" placeholder="nis siswa" required/><br/>
+            <h5>Kelas:</h5>
+            <input type="text" name="kelas" class="form-control" value="8" readonly/><br/>
             <h5>Kategori:</h5>
             <input type="text" name="kategori" class="form-control" value="PAS" readonly/><br/>
             <h4><strong>Mata Pelajaran.</strong></h4>
@@ -123,6 +125,24 @@
             <input type="number" name="pjok" class="form-control" placeholder="nilai siswa" required/><br/>
             <h5>TIK:</h5>
             <input type="number" name="tik" class="form-control" placeholder="nilai siswa" required/><br/>
+            <h5>Prakarya:</h5>
+            <input type="number" name="prakarya" class="form-control" placeholder="nilai siswa"/><br/>
+            <h5>Bahasa Arab:</h5>
+            <input type="number" name="barab" class="form-control" placeholder="nilai siswa"/><br/>
+            <h5>Akidah:</h5>
+            <input type="number" name="akidah" class="form-control" placeholder="nilai siswa"/><br/>
+            <h5>Akhlak:</h5>
+            <input type="number" name="akhlak" class="form-control" placeholder="nilai siswa"/><br/>
+            <h5>Qur'an dan Hadits:</h5>
+            <input type="number" name="quran_hadits" class="form-control" placeholder="nilai siswa"/><br/>
+            <h5>SKI:</h5>
+            <input type="number" name="ski" class="form-control" placeholder="nilai siswa"/><br/>
+            <h5>Kepesantrenan:</h5>
+            <input type="number" name="pesantren" class="form-control" placeholder="nilai siswa"/><br/>
+            <h5>Fiqih:</h5>
+            <input type="number" name="fiqih" class="form-control" placeholder="nilai siswa"/><br/>
+            <h5>Tahfidz:</h5>
+            <input type="number" name="tahfidz" class="form-control" placeholder="nilai siswa"/><br/>
             <div class="modal-footer">
                 <button type="reset" class="btn btn-danger">Reset</button>
                 <button type="submit" class="btn btn-primary">Submit</button>

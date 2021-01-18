@@ -16,6 +16,21 @@ class Admin extends CI_Controller
 		//session LOGIN!!
 		//$data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
 
+		/////PAGINATION UNTUK HALAMAN USER BESOK!!///
+		//Load pagination
+		//$this->load->library("pagination");
+
+		//Config
+		//$config['base_url'] = 'http://localhost/magang/admin/admin/index';
+		//$config['total_rows'] = $this->berita_model->countAllBerita();
+		//$config['per_page'] = 2;
+
+		//initialize
+		//$this->pagination->initialize($config);
+
+		//$data['start'] = $this->uri->segment(3);
+		//$data['berita'] = $this->berita_model->getBerita($config['per_page'], $data['start']);
+
 
 		$data['judul'] = 'List Data Berita'; 
 		$data['berita'] = $this->berita_model->getAllBerita();
@@ -23,20 +38,7 @@ class Admin extends CI_Controller
 		$this->load->view('admin/berita/index', $data);
 		$this->load->view('admin/footer');
 
-		/////PAGINATION UNTUK HALAMAN USER BESOK!!///
-		//Load pagination
-		//$this->load->library("pagination");
-
-		//Config
-		//$config['base_url'] = 'http://localhost/magang/admin/index';
-		//$config['total_rows'] = $this->berita_model->countAllBerita();
-		//$config['per_page'] = 11;
-
-		//initialize
-		//$this->pagination->initialize($config);
-
-		//$data['start'] = $this->uri->segment(3);
-		//$data['berita'] = $this->berita_model->getAllBerita($config['per_page'], $data['start']);
+		
 	}
  
 	public function simpan_post()

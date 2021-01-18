@@ -1,8 +1,8 @@
-<?php 
+<?php  
 class Berita_model extends CI_Model
 { 
  
-	function simpan_berita($jdl,$berita,$gambar)
+	function simpan_berita($jdl,$berita,$gambar) 
 	{
 		//$hsl=$this->db->query("INSERT INTO tbl_berita (berita_judul,berita_isi,berita_image) VALUES ('$jdl','$berita','$gambar')");
 		//return $hsl;
