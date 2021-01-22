@@ -104,7 +104,7 @@
           <img src="<?= base_url('assets/admin/') ?>img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php echo base_url();?>profilg" class="d-block">Ani Surotul Latifah</a>
+          <a href="<?php echo base_url();?>profilg" class="d-block">Anonym</a>
         </div>
       </div>
 

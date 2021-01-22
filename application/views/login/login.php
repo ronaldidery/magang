@@ -12,10 +12,10 @@
       <div class="title">
       Login Admin
       </div>
-      <form action="#">
+      <form action="<?= base_url('admin/admin') ?>">
               <div class="field">
                 <input type="text" required>
-                <label>Email Address</label>
+                <label>Username</label>
               </div>
               <div class="field">
                 <input type="password" required>
@@ -31,6 +31,7 @@
               </div> -->
               <div class="field">
                 <input type="submit" value="Login">
+                <!-- <a href="<?= base_url('admin/admin') ?>">Login</a> -->
               </div>
       </form>
 </div>

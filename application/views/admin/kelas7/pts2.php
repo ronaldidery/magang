@@ -1,4 +1,5 @@
- <!-- ============================================================== -->
+
+<!-- ============================================================== -->
 <!-- Page wrapper  -->
 <!-- ============================================================== -->
 <div class="content-wrapper">
@@ -120,7 +121,7 @@
             <h5>PKN:</h5>
             <input type="number" name="pkn" class="form-control" placeholder="nilai siswa"/><br/>
             <h5>Seni Budaya:</h5>
-            <input type="number" name="sbk" class="form-control" placeholder="NIS siswa"/><br/>
+            <input type="number" name="sbk" class="form-control" placeholder="nilai siswa"/><br/>
             <h5>PJOK:</h5>
             <input type="number" name="pjok" class="form-control" placeholder="nilai siswa"/><br/>
             <h5>TIK:</h5>
@@ -316,7 +317,7 @@ foreach ($nilai as $value) : $no++ ?>
             <h5>PKN:</h5>
             <input type="number" name="pkn" value="<?= $value['pkn'];?>" class="form-control" placeholder="nilai siswa" required/><br/>
             <h5>Seni Budaya:</h5>
-            <input type="number" name="sbk" value="<?= $value['sbk'];?>" class="form-control" placeholder="NIS siswa" required/><br/>
+            <input type="number" name="sbk" value="<?= $value['sbk'];?>" class="form-control" placeholder="nilai siswa" required/><br/>
             <h5>PJOK:</h5>
             <input type="number" name="pjok" value="<?= $value['pjok'];?>" class="form-control" placeholder="nilai siswa" required/><br/>
             <h5>TIK:</h5>

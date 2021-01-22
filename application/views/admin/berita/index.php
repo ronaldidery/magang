@@ -37,7 +37,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-    <?php endif; ?>
+        <?php endif; ?>
 
     <?php   
     function limit_words($string, $word_limit){

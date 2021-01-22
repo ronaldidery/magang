@@ -25,7 +25,7 @@ class Admin extends CI_Controller
 		//$config['total_rows'] = $this->berita_model->countAllBerita();
 		//$config['per_page'] = 2;
 
-		//initialize
+		//initialize 
 		//$this->pagination->initialize($config);
 
 		//$data['start'] = $this->uri->segment(3);

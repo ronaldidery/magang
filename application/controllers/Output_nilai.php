@@ -1,7 +1,7 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class Admin extends CI_Controller
+class Output_nilai extends CI_Controller
 {
 	public function __construct()
 	{
@@ -9,48 +9,30 @@ class Admin extends CI_Controller
 		$this->load->model('output_nilai_model');
 	}
 
-	public function nilai7()
+	public function nilai()
 	{
-		if () {
+		$nis = $this->input->post('nis',TRUE);
+		$cek = $this->output_nilai_model->validationNIS($nis);
 
-			$value = ...
+		if ($cek->num_rows() > 0) {
+			$data['pts1'] = $this->output_nilai_model->getPts1($nis);
+			$data['pas'] = $this->output_nilai_model->getPas($nis);
+			$data['pts2'] = $this->output_nilai_model->getPts2($nis);
+			$data['pat'] = $this->output_nilai_model->getPat($nis);
 
-			$data['pts1'] = $this->output_nilai_model->getPts1_7($value);
-			$data['pas'] = $this->output_nilai_model->getPas_7($value);
-			$data['pts2'] = $this->output_nilai_model->getPts2_7($value);
-			$data['pts1'] = $this->output_nilai_model->getPat_7($value);
-
-			$this->load->view('nilai/kelas7', $data);
+			$this->load->view('nilai/index', $data);
+		} else {
+			$this->session->set_flashdata('flash', 'terdaftar!');
+			redirect('home/nilai_siswa');
 		}
-	}
+		
 
-	public function nilai8()
-	{
-		if () {
 
-			$value = ...
 
-			$data['pts1'] = $this->output_nilai_model->getPts1_8($value);
-			$data['pas'] = $this->output_nilai_model->getPas_8($value);
-			$data['pts2'] = $this->output_nilai_model->getPts2_8($value);
-			$data['pts1'] = $this->output_nilai_model->getPat_8($value);
 
-			$this->load->view('nilai/kelas7', $data);
-		}
-	}
+		
 
-	public function nilai9()
-	{
-		if () {
-
-			$value = ...
-
-			$data['pts1'] = $this->output_nilai_model->getPts1_9($value);
-			$data['pas'] = $this->output_nilai_model->getPas_9($value);
-			$data['pts2'] = $this->output_nilai_model->getPts2_9($value);
-			$data['pts1'] = $this->output_nilai_model->getPat_9($value);
-
-			$this->load->view('nilai/kelas7', $data);
-		}
+		//var_dump($data);
+		
 	}
 }

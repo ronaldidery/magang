@@ -38,4 +38,9 @@ class Home extends CI_Controller {
 		$this->load->view('ppdb', $data);
 		$this->load->view('templates/footer');
 	}
+
+	public function nilai_siswa()
+	{
+		$this->load->view('login/login_siswa');
+	}
 }
