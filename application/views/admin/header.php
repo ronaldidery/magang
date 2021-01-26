@@ -77,7 +77,7 @@
             <i class="nav-icon fas fa-th"></i>   Lihat Profil
           </a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <a href="<?= base_url('loginadmin/logout') ?>" class="dropdown-item">
             <i class="fas fa-users mr-2"></i>Logout
           </a>
 
@@ -104,7 +104,7 @@
           <img src="<?= base_url('assets/admin/') ?>img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="<?php echo base_url();?>profilg" class="d-block">Anonym</a>
+          <a href="<?php echo base_url();?>profilg" class="d-block"><?php echo $admin; ?></a>
         </div>
       </div>
 
@@ -243,25 +243,25 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?= base_url('admin/kelas7/pts1'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/nilai/pts17'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 1</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('admin/kelas7/pas'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/nilai/pas7'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PAS</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('admin/kelas7/pts2'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/nilai/pts27'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 2</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('admin/kelas7/pat'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/nilai/pat7'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PAT</p>
                     </a>
@@ -278,25 +278,25 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?= base_url('admin/kelas8/pts1'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/nilai/pts18'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 1</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('admin/kelas8/pas'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/nilai/pas8'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PAS</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('admin/kelas8/pts2'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/nilai/pts28'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 2</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('admin/kelas8/pat'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/nilai/pat8'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PAT</p>
                     </a>
@@ -313,25 +313,25 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?= base_url('admin/kelas9/pts1'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/nilai/pts19'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 1</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('admin/kelas9/pas'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/nilai/pas9'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PAS</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('admin/kelas9/pts2'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/nilai/pts29'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PTS 2</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?= base_url('admin/kelas9/pat'); ?>" class="nav-link">
+                    <a href="<?= base_url('admin/nilai/pat9'); ?>" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PAT</p>
                     </a>
@@ -339,7 +339,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<?= base_url('loginadmin/logout'); ?>" class="nav-link">
                   <i class="fas fa-users mr-2"></i>
                   <p>
                     Logout

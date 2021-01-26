@@ -8,10 +8,14 @@ class Guru extends CI_Controller {
 		parent::__construct();
 		$this->load->model('guru_model');
         $this->load->library('upload');
+        if($this->session->userdata('nama') == null){
+      		redirect('loginadmin');
+    	}
 	}
 
 	public function index() 
 	{
+		$data['admin'] = $this->session->userdata('nama');
 		$data['judul'] = 'Data Guru';
 		$data['guru'] = $this->guru_model->getAllBerita();
 		$this->load->view('admin/header', $data);

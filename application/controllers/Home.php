@@ -43,4 +43,11 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('login/login_siswa');
 	}
+
+	public function loginadmin()
+	{
+		$this->load->view('login/login_header');
+		$this->load->view('login/index');
+		$this->load->view('login/login_footer');
+	}
 }

@@ -26,12 +26,6 @@ class Output_nilai extends CI_Controller
 			redirect('home/nilai_siswa');
 		}
 		
-
-
-
-
-		
-
 		//var_dump($data);
 		
 	}

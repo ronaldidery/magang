@@ -9,6 +9,9 @@ class Admin extends CI_Controller
 		parent::__construct(); 
 		$this->load->model('berita_model');
         $this->load->library('upload');
+        if($this->session->userdata('nama') == null){
+      		redirect('loginadmin');
+    	}
 	}
 
 	public function index()
@@ -31,7 +34,7 @@ class Admin extends CI_Controller
 		//$data['start'] = $this->uri->segment(3);
 		//$data['berita'] = $this->berita_model->getBerita($config['per_page'], $data['start']);
 
-
+		$data['admin'] = $this->session->userdata('nama');
 		$data['judul'] = 'List Data Berita'; 
 		$data['berita'] = $this->berita_model->getAllBerita();
 		$this->load->view('admin/header', $data);

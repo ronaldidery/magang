@@ -8,10 +8,14 @@ class Event extends CI_Controller {
 		parent::__construct();
 		$this->load->model('event_model');
         $this->load->library('upload');
+        if($this->session->userdata('nama') == null){
+      		redirect('loginadmin');
+    	}
 	}
 
 	public function index() 
 	{
+		$data['admin'] = $this->session->userdata('nama');
 		$data['judul'] = 'Data Event MTs Bima Bhakti Pertiwi';
 		$data['event'] = $this->event_model->getAllEvent();
 		$this->load->view('admin/header', $data);

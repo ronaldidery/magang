@@ -8,10 +8,14 @@ class Carousel extends CI_Controller {
 		parent::__construct();
 		$this->load->model('carousel_model');
         $this->load->library('upload');
+        if($this->session->userdata('nama') == null){
+      		redirect('loginadmin');
+    	}
 	}
 
 	public function index() 
 	{
+		$data['admin'] = $this->session->userdata('nama');
 		$data['judul'] = 'Data Carousel';
 		$data['carousel'] = $this->carousel_model->getAllCarousel();
 		$this->load->view('admin/header', $data);

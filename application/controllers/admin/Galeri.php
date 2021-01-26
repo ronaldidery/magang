@@ -8,10 +8,14 @@ class Galeri extends CI_Controller {
 		parent::__construct();
 		$this->load->model('galeri_model');
         $this->load->library('upload');
+        if($this->session->userdata('nama') == null){
+      		redirect('loginadmin');
+    	}
 	}
 
 	public function index() 
 	{
+		$data['admin'] = $this->session->userdata('nama');
 		$data['judul'] = 'Data Foto Galeri';
 		$data['galeri'] = $this->galeri_model->getAllGaleri();
 		$this->load->view('admin/header', $data);

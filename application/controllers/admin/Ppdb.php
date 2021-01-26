@@ -9,10 +9,14 @@ class Ppdb extends CI_Controller {
         $this->load->helper("url"); 
         $this->load->model('ppdb_model'); 
         $this->load->helper('download');
+        if($this->session->userdata('nama') == null){
+            redirect('loginadmin');
+        }
     }
 
 	public function index() 
     {
+        $data['admin'] = $this->session->userdata('nama');
         $data['judul'] = 'Data Pendaftar';
         $data['pendaftaran'] = $this->ppdb_model->getAllDataPendaftaran();
         $this->load->view('admin/header', $data);
