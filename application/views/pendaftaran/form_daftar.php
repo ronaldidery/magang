@@ -4,12 +4,12 @@
 </br></br>
 
 <?php if ($this->session->flashdata('flash') ):  ?>
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-  Pendaftaran <strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
+  <div class="alert alert-success alert-dismissible" role="alert">
+    Pendaftaran <strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 <?php endif; ?>
 
 <div class="container p-3 my-3 border">

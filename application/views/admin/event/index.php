@@ -156,9 +156,9 @@ foreach ($event as $value) : $no++ ?>
     </div>
     <div class="modal-body">
         <form action="<?php echo base_url(); ?>admin/event/ubah_data/<?php echo $value['id_event'];?>" method="post" enctype="multipart/form-data">
-            <h5>Judul Berita:</h5>
+            <h5>Judul Event:</h5>
             <input value="<?= $value['jdl_event']; ?>" type="text" name="judul" class="form-control" placeholder="Judul event" required/><br/>
-            <h5>Deskripsi Berita:</h5>
+            <h5>Deskripsi Event:</h5>
             <textarea id="ckeditor" name="deskripsi" class="form-control" required><?= $value['desk_event']; ?></textarea><br/>
             <h5>Upload Foto</h5>
             <input type="file" name="filefoto"><br/><br/>
